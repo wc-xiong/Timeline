@@ -4,6 +4,8 @@
 
 Qt5 / C++17 时间线编辑软件。单体可执行文件 `Timeline.exe`（Libs 源码编入同一目标）。
 
+![Timeline UI](doc/images/ui-overview.png)
+
 设计文档：[doc/](doc/README.md)
 
 ## 功能
