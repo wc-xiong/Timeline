@@ -91,6 +91,8 @@ Debug.bat / Release.bat
 
 Qt5 / C++17 timeline editor. Ships as a single `Timeline.exe` (library sources compiled into the same target).
 
+![Timeline UI](doc/images/ui-overview.png)
+
 Design docs: [doc/](doc/README.md)
 
 ## Features
