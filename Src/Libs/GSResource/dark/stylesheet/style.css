@@ -1,0 +1,4518 @@
+/* 使用utf-8格式，否则不生效*/
+
+/* @One$=1  逻辑像素基准，96 DPI 设计稿下 1 单位 = 1px */
+QWidget[MainWindow=true] {
+    background-color: black;
+}
+
+QMainWindow[MainWindow=true]::separator {
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+QLabel {
+    color: rgb(220,220,220);
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+}
+QLabel:disabled {
+    color: rgba(220, 220, 220, 0.4);
+    background-color: transparent;
+}
+
+QLabel:disabled {
+    color: rgb(120, 124, 126);
+}
+
+QTabWidget {
+    border: none;
+}
+
+QTabBar {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: rgb(66, 70, 76);
+    color: rgb(255, 255, 255);
+    border: 0px;
+    outline: none;
+    padding-left: @16$px;
+}
+
+QTabBar::tear {
+    width: 0px;
+    border: none;
+}
+
+QTabBar::tab {
+    background-color: rgb(66, 70, 76);
+    height: @24$px;
+    border: none;
+    outline: none;
+    padding: @2$px;
+    padding-left: @16$px;
+    padding-right: @16$px;
+}
+
+QTabBar::tab:selected {
+    background-color: rgb(22, 26, 30);
+    border: none;
+    /*border-bottom: @1$px solid rgb(65, 147, 249);*/
+}
+
+/*标题栏背景*/
+QFrame[DlgTitleBar=true] {
+    background-color: rgb(75, 78, 82);
+    border-radius: 0px;
+    border-top-left-radius: @5$px;
+    border-top-right-radius: @5$px;
+    border-bottom: @1$px solid rgb(0, 0, 0);
+}
+
+QFrame[DisplayerTitleBar=true] {
+    background-color: rgb(48, 50, 54);
+    border-radius: 0px;
+    border-top-left-radius: @5$px;
+    border-top-right-radius: @5$px;
+    border-bottom: @1$px solid rgb(0, 0, 0);
+}
+
+QFrame[DisplayerTitleBar=true] QToolButton[TitleToolButton=true] {
+    background-color: rgb(48, 50, 54);
+    color: rgb(204, 209, 215);
+    font: normal @12$px "Microsoft Yahei";
+    border-radius: @4$px;
+    outline: none;
+    padding-left: @10$px;
+    padding-right: @10$px;
+}
+QFrame[DisplayerTitleBar=true] QToolButton[TitleToolButton=true]:hover {
+    background-color: rgb(55, 57, 61);
+    color: rgb(255, 255, 255);
+}
+QFrame[DisplayerTitleBar=true] QToolButton[TitleToolButton=true]:pressed {
+    background-color: rgb(75, 78, 82);
+    color: rgb(204, 209, 215);
+}
+QFrame[DisplayerTitleBar=true] QToolButton[TitleToolButton=true]:pressed:unchecked {
+    background-color: rgb(75, 78, 82);
+    color: rgb(255, 255, 255);
+}
+QFrame[DisplayerTitleBar=true] QToolButton[TitleToolButton=true]:checked {
+    background-color: rgb(75, 78, 82);
+    color: rgb(255, 255, 255);
+}
+
+
+QLabel[TitleBarName=true] {
+    font: bold @12$px "Microsoft Yahei";
+    color: rgb(230, 234, 238);
+    border: 0px;
+    background-color: transparent;
+    padding-right: @1$px;
+}
+
+QPushButton[TitleCloseBtn=true]{
+	border-radius: 0px;
+	border-top-right-radius: @8$px;
+}
+
+QFrame[MainTitleBar=true] {
+    background-color: rgb(31, 33, 36);
+    border-radius: 0px;
+    border: none;
+}
+
+QLineEdit[MainTitleBarName=true],
+QLineEdit[MainTitleBarName=true]:read-only {
+    font-weight: 500;
+    color: rgb(232, 237, 242);
+    border: @1$px solid transparent;
+    background-color: transparent;
+}
+
+QLineEdit[MainTitleBarName=true]:!read-only:hover {
+    color: rgb(255,255,255);
+    border: @1$px solid rgba(100, 104, 109, 1);
+    background-color: rgba(53, 55, 59, 1);
+}
+
+QLineEdit[MainTitleBarName=true]:!read-only:focus {
+    color: rgb(255,255,255);
+    border: @1$px solid rgb(61, 139, 255);
+    background-color: rgb(25, 27, 30);
+}
+/*标题栏图标1*/
+QToolButton[LogoButton=true] {
+    background-color: transparent;
+    border-image: url(:/dark/images/TitleBar/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+
+/*标题栏图标2*/
+QToolButton[LogoButton2=true] {
+    background-color: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    color: white;
+    font: bold @12$px "Microsoft Yahei";
+}
+
+/*日志界面按钮*/
+QToolButton[LogCheckButton=true],
+QToolButton[LogCheckButton=true]:hover {
+    background-color: #42464C;
+    border: none;
+    border-radius: @2$px;
+    font: normal @12$px "Microsoft Yahei";
+    color: white;
+}
+
+QToolButton[LogCheckButton=true]:checked {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #6E9FFF, stop:1 #0D50D6);
+    border: none;
+    border-radius: @2$px;
+    font: normal @12$px "Microsoft Yahei";
+    color: white;
+}
+
+/*列表表头-------------------------------------------------------------*/
+QHeaderView {
+    border: none;
+    border-bottom: @1$px solid rgba(0, 0, 0, 1);
+    background-color: rgba(53, 55, 58, 1);
+    height: @24$px;
+    outline: none;
+}
+
+QHeaderView::section {
+    font: 600 @12$px "Microsoft Yahei";
+    background-color: transparent;
+    color: rgba(255,255,255,1);
+    border: none;
+    border-right: @1$px solid rgba(0, 0, 0, 1);
+    padding-left: @12$px;
+    height: @18$px;
+    outline: none;
+    margin-top: @4$px;
+    margin-bottom: @4$px;
+}
+
+QHeaderView[QuoteListDlg=true]::section {
+    border-right: none;
+}
+
+QHeaderView::section:last {
+    border-right: none;
+}
+
+QHeaderView::section:disabled {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+QHeaderView::down-arrow {
+    subcontrol-position: center right;
+    image: url(:/dark/images/CommonImage/HeaderViewSort_Down.svg);
+    padding-right: @6$px;
+    width: @16$px;
+    height: @16$px;
+}
+
+QHeaderView::up-arrow {
+    subcontrol-position: center right;
+    image: url(:/dark/images/CommonImage/HeaderViewSort_Up.svg);
+    padding-right: @6$px;
+    width: @16$px;
+    height: @16$px;
+}
+
+QHeaderView::down-arrow:hover {
+    subcontrol-position: center right;
+    image: url(:/dark/images/CommonImage/HeaderViewSort_Down_hover.svg);
+    padding-right: @6$px;
+    width: @16$px;
+    height: @16$px;
+}
+
+QHeaderView::up-arrow:hover {
+    subcontrol-position: center right;
+    image: url(:/dark/images/CommonImage/HeaderViewSort_Up_hover.svg);
+    padding-right: @6$px;
+    width: @16$px;
+    height: @16$px;
+}
+
+QHeaderView[HeaderViewEx=true]::section {
+    border: 0px;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    height: @24$px;
+}
+QHeaderView[ResWndTreeViewHeader=true] {
+    border: none;
+    border-bottom: @1$px solid rgba(0, 0, 0, 1);
+    background-color: rgba(53, 55, 58, 1);
+    height: @24$px;
+    outline: none;
+}
+
+QHeaderView[SliceView=true] {
+    border: none;
+    background-color: transparent;
+}
+QHeaderView[SliceView=true]::section {
+    font: normal @12$px "Microsoft Yahei";
+    font-weight: bold;
+    background-color: transparent;
+    color: #E8ECF2;
+    border: none;
+    padding-left: @24$px;
+    border-right: @1$px solid #42464C;
+    height: @18$px;
+    outline: none;
+    margin-top: @4$px;
+    margin-bottom: @4$px;
+}
+
+QTableView[LogTable=true] {
+    font: normal @12$px "Microsoft Yahei";
+    color: rgba(204, 209, 215, 1);
+    background-color: rgba(75, 78, 82, 1);
+    alternate-background-color: rgba(25, 27, 30, 1);
+    outline: none;
+    border: @1$px solid rgba(0, 0, 0, 1);
+}
+
+QTableView[LogTable=true]::item {
+    height: @24$px;
+    outline: 0px;
+    border: 0px;
+    padding-left: @10$px;
+}
+
+QHeaderView[TableResourceH=true] {
+    background-color: rgb(29, 33, 38);
+    border: none;
+    outline: none;
+}
+
+QHeaderView[TableResourceH=true]::section {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    color: rgb(200, 204, 208);
+    border: none;
+    padding-left: 0px;
+    border-left: none;
+    border-right: @1$px solid rgb(42, 46, 50);
+    outline: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+    QHeaderView[TableResourceV=true] {
+        background-color: rgb(29, 33, 38);
+        border: none;
+        outline: none;
+    }
+
+        QHeaderView[TableResourceV=true]::section {
+            font: normal @12$px "Microsoft Yahei";
+            background-color: transparent;
+            color: rgb(200, 204, 208);
+            border: none;
+            padding-left: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-top: none;
+            border-bottom: @1$px solid rgb(42, 46, 50);
+            outline: none;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+QHeaderView[DBTableResourceH=true] {
+    background-color: rgb(29, 33, 38);
+    border: none;
+    outline: none;
+}
+
+QHeaderView[DBTableResourceH=true]::section {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    color: rgba(160, 164, 170, 1);
+    border: none;
+    padding-left: 0px;
+    border-left: none;
+    border-right: @1$px solid rgb(42, 46, 50);
+    outline: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+QHeaderView[DBTableResourceV=true] {
+    background-color: rgb(29, 33, 38);
+    border: none;
+    outline: none;
+}
+
+QHeaderView[DBTableResourceV=true]::section {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    color: rgba(160, 164, 170, 1);
+    border: none;
+    padding-left: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: none;
+    border-bottom: @1$px solid rgb(42, 46, 50);
+    outline: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+QHeaderView[ScheduleListHead=true] {
+    background-color: rgb(66, 70, 76);
+}
+
+QWidget[ScheduleHeader=true] {
+    background-color: rgb(66, 70, 76);
+    border: none;
+}
+
+QWidget[ResHeader=true] {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(72, 76, 82), stop:1 rgb(32, 36, 42));
+    border: none;
+    width: @12$px;
+    height: @30$px;
+    outline: none;
+}
+
+QWidget[LogHeader=true] {
+    border: none;
+    border-top: @1$px solid #42464C;
+    border-bottom: @1$px solid #42464C;
+    background-color: #161A1E;
+}
+
+QLabel[BoldName=true] {
+    font-weight: bold;
+    color: #E8ECF2;
+}
+QLabel[BoldName1=true] {
+    font-weight: bold;
+    color: #FF0000;
+    background-color: #FF0000;
+}
+
+
+QCheckBox[BoldCheckBox=true] {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+/*表格列表--------------------------------------------------------------*/
+QTableView[normal=true] {
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    alternate-background-color: rgb(22, 26, 30);
+    outline: none;
+    border: none;
+    /*border: 1px solid rgb(66, 70, 76);*/
+}
+
+QTableView[APPUserList=true]:disabled {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+QTableView[normal=true]::item {
+    height: @30$px;
+    outline: 0px;
+    border: 0px;
+    padding-left: @5$px;
+}
+
+QTableView[normal=true]::item:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(58, 62, 68);
+}
+
+QTableView[normal=true]::item:selected {
+    color: rgb(255, 255, 255);
+    background-color: rgb(78, 82, 88);
+}
+
+QTableView[APPUserList=true]::item:disabled {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+QTableView[APPUserList=true] {
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    outline: @1$px solid #161A1E;
+    border: @1$px solid #42464A;
+    border-radius: 0px;
+}
+
+/*树型列表--------------------------------------------------------------*/
+QTreeView {
+    font: normal @12$px "Microsoft Yahei";
+    show-decoration-selected: 1;
+    color: rgb(255, 255, 255);
+    background-color: rgb(31, 33, 36);
+    alternate-background-color: rgb(29, 31, 34);
+    outline: none;
+    border: none;
+}
+
+QTreeView::branch:hover,
+QTreeView::item:hover {
+    background-color: rgb(58, 62, 68);
+    border: none;
+    border-bottom: @1$px solid transparent;
+}
+
+QTreeView::branch:selected,
+QTreeView::item:selected {
+    background-color: rgba(75, 78, 82, 1);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-bottom: @1$px solid rgb(0, 0, 0);
+}
+
+QTreeView::item {
+    height: @32$px;
+    outline: none;
+    border: none;
+    border-bottom: @1$px solid transparent;
+    padding-left: @1$px;
+}
+
+QTreeView::item:disabled {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+QTreeView::branch:hover,
+QTreeView::item:hover {
+    background-color: rgba(48, 50, 54, 1);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+QTreeView::branch {
+    width: @32$px;
+    height: @16$px;
+    /*padding-left: @16$px;*/
+    border: none;
+    border-bottom: @1$px solid transparent;
+    left: @16$px;
+}
+
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings {
+    image: url(:/dark/images/Folder/Expand/Normal.svg);
+}
+
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:has-children:has-siblings:closed {
+    image: url(:/dark/images/Folder/Collapse/Normal.svg);
+}
+
+QTreeView::branch:open:has-children:!has-siblings:hover,
+QTreeView::branch:open:has-children:has-siblings:hover {
+    image: url(:/dark/images/Folder/Expand/Hover.svg);
+}
+
+QTreeView::branch:has-children:!has-siblings:closed:hover,
+QTreeView::branch:has-children:has-siblings:closed:hover {
+    image: url(:/dark/images/Folder/Collapse/Hover.svg);
+}
+
+QTreeView::branch:open:has-children:!has-siblings:pressed,
+QTreeView::branch:open:has-children:has-siblings:pressed {
+    image: url(:/dark/images/Folder/Expand/Down.svg);
+}
+
+QTreeView::branch:has-children:!has-siblings:closed:pressed,
+QTreeView::branch:has-children:has-siblings:closed:pressed {
+    image: url(:/dark/images/Folder/Collapse/Down.svg);
+}
+
+QTreeView::branch:open:has-children:!has-siblings:disabled,
+QTreeView::branch:open:has-children:has-siblings:disabled {
+    image: url(:/dark/images/Folder/Expand/Disable.svg);
+}
+
+QTreeView::branch:has-children:!has-siblings:closed:disabled,
+QTreeView::branch:has-children:has-siblings:closed:disabled {
+    image: url(:/dark/images/Folder/Collapse/Disable.svg);
+}
+
+QHeaderView[ResWndTreeViewHeader=true] {
+    border: none;
+    border-bottom: @1$px solid rgba(0, 0, 0, 1);
+    background-color: rgba(53, 55, 58, 1);
+    height: @24$px;
+    outline: none;
+}
+
+QTreeView[ResWndTreeView=true] {
+    background-color: rgb(31, 33, 36);
+    alternate-background-color: rgb(25, 27, 30);
+    background-color: rgb(31, 33, 36);
+    color: none;
+    border: none;
+    border-top: @1$px solid rgba(0, 0, 0, 1);
+}
+
+/* 素材库：branch 区域选中样式（与 CommonDelegate 一致） */
+QTreeView[ResWndTreeView=true]::branch:selected {
+    background-color: rgb(75, 78, 82);
+    border: none;
+    outline: none;
+}
+
+QTreeView[ResWndTreeView=true]::branch:selected:hover {
+    background-color: rgb(48, 50, 54);
+    border: none;
+    outline: none;
+}
+
+/* item 由委托画背景，QSS 只去掉默认边框，避免露黑线 */
+QTreeView[ResWndTreeView=true]::item:selected {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: rgb(232, 236, 242);
+}
+
+QTreeView[ResWndTreeView=true]::item:selected:hover {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+
+QTreeView[ResWndTreeView=true]::item {
+    height: @30$px;
+    outline: none;
+    border: none;
+    border-bottom: @1$px solid transparent;
+    padding-left: -2px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* CueList：item 背景由 delegate 绘制，避免全局 QTreeView::item 样式覆盖 Section 高亮 */
+QTreeView[CueListTreeView=true]::branch:hover,
+QTreeView[CueListTreeView=true]::item:hover {
+    background: transparent;
+    border: none;
+}
+
+QTreeView[CueListTreeView=true]::branch:selected,
+QTreeView[CueListTreeView=true]::item:selected {
+    background: transparent;
+    border: none;
+}
+
+QTreeView[CueListTreeView=true]::item {
+    background: transparent;
+    border: none;
+}
+
+QTableView[NetworkStatusTable=true] {
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(204, 208, 215);
+    background-color: rgb(25, 27, 30);
+    border: none;
+    outline: none;
+}
+
+QTableView[NetworkStatusTable=true]::item:selected {
+    color: rgb(204, 208, 215);
+    background-color: transparent;
+}
+
+QTableView[NetworkStatusTable=true]::item {
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(204, 208, 215);
+    height: @30$px;
+    outline: none;
+    border: none;
+    border-bottom: @1$px solid rgb(31, 33, 36);
+    padding-left: 0px;
+}
+
+/*列表--------------------------------------------------------------*/
+QListView {
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    alternate-background-color: rgb(22, 26, 30);
+    outline: none;
+    border: none;
+}
+
+QListView::item {
+    height: @30$px;
+    outline: 0px;
+    border: 0px;
+    padding-left: @5$px;
+}
+
+QListView::item:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(58, 62, 68);
+}
+
+QListView::item:selected {
+    color: rgb(255, 255, 255);
+    background-color: rgb(78, 82, 88);
+}
+
+/*按钮------------------------------------------------------------------*/
+QPushButton {
+    background-color: rgba(75, 78, 82, 1); /*背景色*/
+    border-radius: @4$px; /*边界圆滑*/
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(200, 204, 208); /*字体颜色*/
+    text-align: center;
+    vertical-align: miple;
+    padding-left: @6$px;
+    padding-right: @6$px;
+}
+
+QPushButton:hover:!pressed {
+	background-color: rgb(100, 104, 109);
+	color: rgb(255, 255, 255);
+}
+
+QPushButton:checked,
+QPushButton:pressed {
+    background-color: rgba(141, 144, 149, 1);
+    color: rgb(255, 255, 255);
+}
+
+QPushButton:disabled {
+    background-color: rgba(53, 55, 59, 1);
+    color: rgb(116, 120, 124);
+}
+
+QPushButton[BrandBlue=true] {
+    background-color: rgba(61, 139, 255, 1); /*背景色 品牌蓝*/
+    color: rgb(255, 255, 255); /*字体颜色*/
+}
+QPushButton[BrandBlue=true]:hover:!pressed {
+    background-color: rgba(77, 148, 255, 1);
+    color: rgb(255, 255, 255);
+}
+
+QPushButton[BrandBlue=true]:checked,
+QPushButton[BrandBlue=true]:pressed {
+    background-color: rgba(96, 160, 255, 1);
+    color: rgb(255, 255, 255);
+}
+
+QPushButton[BrandBlue=true]:disabled {
+    background-color: rgba(35, 79, 145, 1);
+    color: rgba(170, 174, 179, 1);
+}
+
+/*QToolTip {
+    border:solid;
+    border-width:@1$px;
+    border-color:rgb(66, 70, 74);
+    background-color: rgb(32, 36, 42);
+    font: normal @12$px "Microsoft YaHei";
+    color: rgb(200, 204, 208);
+}*/
+
+QToolTip {
+    background-color: rgba(45, 47, 50, 255);
+    font: normal @12$px "Microsoft YaHei";
+    color: rgb(255, 255, 255);
+    border: @1$px solid rgba(75, 78, 82, 255);
+    border-radius: @4$px;
+    /*padding-top: @4$px;*/
+    padding-left: @2$px;
+    padding-right: @2$px;
+    /*padding-bottom: @4$px;*/
+}
+
+QToolButton:focus,
+QPushButton:focus{
+	outline: none;
+}
+
+/*图片按钮------------------------------------------------------------*/
+QToolButton[ImageButton=true],
+QPushButton[ImageButton=true] {
+	background-color: rgba(69, 71, 76, 0); /*背景色*/
+	border-radius: @4$px; /*边界圆滑*/
+	vertical-align: miple;
+}
+
+QToolButton[ImageButton=true]:hover:!pressed,
+QPushButton[ImageButton=true]:hover:!pressed {
+	background-color: rgb(58, 58, 58);
+}
+
+QToolButton[ImageButton=true]:pressed,
+QPushButton[ImageButton=true]:pressed {
+	background-color: rgb(81, 81, 81);
+}
+
+/*无背景色按钮，主要用于图片按钮------------------------------------------------------------*/
+QToolButton[transparentBkBtn=true],
+QPushButton[transparentBkBtn=true],
+QToolButton[transparentBkBtn=true]:hover:!pressed,
+QPushButton[transparentBkBtn=true]:hover:!pressed,
+QToolButton[transparentBkBtn=true]:pressed,
+QPushButton[transparentBkBtn=true]:pressed,
+QToolButton[transparentBkBtn=true]:disabled,
+QPushButton[transparentBkBtn=true]:disabled{
+	background-color: transparent;
+}
+
+QToolButton[TitleToolButton=true] {
+    background-color: rgb(31, 33, 36);
+    color: rgb(204, 209, 215);
+    font: normal @12$px "Microsoft Yahei";
+    border-radius: @4$px;
+    outline: none;
+    padding-left: @10$px;
+    padding-right: @10$px;
+}
+QToolButton[TitleToolButton=true]:hover {
+    background-color: rgb(55, 57, 61);
+    color: rgb(255, 255, 255);
+}
+QToolButton[TitleToolButton=true]:pressed {
+    background-color: rgb(75, 78, 82);
+    color: rgb(204, 209, 215);
+}
+QToolButton[TitleToolButton=true]:pressed:unchecked {
+    background-color: rgb(75, 78, 82);
+    color: rgb(255, 255, 255);
+}
+QToolButton[TitleToolButton=true]:checked {
+    background-color: rgb(75, 78, 82);
+    color: rgb(255, 255, 255);
+}
+QToolButton[InitPrjButton=true] {
+    background-color: rgb(75, 78, 82);
+    color: rgb(204, 209, 215);
+    font: normal @12$px "Microsoft Yahei";
+    border-radius: @4$px;
+    outline: none;
+    padding-left: @10$px;
+    padding-right: @10$px;
+}
+
+QToolButton[InitPrjButton=true]:hover {
+    background-color: rgb(55, 57, 61);
+    color: rgb(255, 255, 255);
+}
+QToolButton[TitleStageToolButton=true] {
+    background-color: rgb(31, 33, 36);
+    color: rgb(204, 209, 215);
+    font: normal @12$px "Microsoft Yahei";
+    border-radius: @4$px;
+    outline: none;
+    padding-left: @10$px;
+    padding-right: @10$px;
+}
+
+QToolButton[TitleStageToolButton=true]:hover {
+    background-color: #4B4E52;
+    color: #CCD0D7;
+}
+
+QToolButton[TitleStageToolButton=true]:pressed {
+    background-color: #2D2F32;
+    color: #E8ECF2;
+}
+
+QToolButton[TitleStageToolButton=true]:pressed:unchecked {
+    background-color: rgb(31, 33, 36);
+    color: rgb(204, 209, 215);
+}
+
+QToolButton[TitleStageToolButton=true]:checked {
+    background-color: #2D2F32;
+    color: #E8ECF2;
+}
+
+QToolButton[TitleStageToolButton=true]:disabled {
+    background-color: rgb(31, 33, 36);
+    color: #64686D;
+}
+
+/*一般按钮------------------------------------------------------------*/
+QPushButton[CommonBtn=true] {
+    background-color: rgb(66, 70, 74);
+}
+QPushButton[CommonBtn=true]:hover:!pressed {
+    background-color: rgb(97, 123, 173);
+}
+QPushButton[CommonBtn=true]:pressed {
+    background-color: rgb(65, 127, 249);
+}
+/*滚动条-------------------------------------------------------------*/
+QScrollBar {
+    border: none;
+    background-color: rgb(32, 35, 41);
+}
+
+QScrollBar:sub-page,
+QScrollBar:add-page {
+	background-color: none;
+}
+
+/* 左侧控制块 */
+QScrollBar::sub-line {
+	border: none;
+	width: @12$px;
+	height: @12$px;
+}
+
+/* 右侧控制块 */
+QScrollBar::add-line {
+	border: none;
+	width: @12$px;
+	height: @12$px;
+}
+
+QScrollBar::add-line:hover,
+QScrollBar::sub-line:hover {
+	background-color: rgb(62, 65, 71);
+}
+
+QScrollBar::add-line:pressed,
+QScrollBar::sub-line:pressed {
+	background-color: rgb(72, 75, 81);
+}
+
+/*水平滚动条-------------------------------------------------------------*/
+QScrollBar::horizontal {
+    height: @8$px;
+    padding-left: @4$px;
+    padding-right: @4$px;
+    margin-right: @2$px;
+    background: transparent;
+}
+
+/* 左侧控制块 */
+QScrollBar::sub-line:horizontal {
+    subcontrol-position: left;
+    height: 0px;
+    width: 0px;
+}
+
+/* 右侧控制块 */
+QScrollBar::add-line:horizontal {
+    subcontrol-position: right;
+    height: 0px;
+    width: 0px;
+}
+
+/*竖直滚动条-------------------------------------------------------------*/
+QScrollBar::vertical {
+	width: @12$px;
+	padding-top: @12$px;
+	padding-bottom: @12$px;
+}
+
+/* 上侧控制块 */
+QScrollBar::sub-line:vertical {
+	subcontrol-position: top;
+	image: url(:/dark/images/ScrollBar/Ver_Top.svg);
+}
+
+/* 下侧控制块 */
+QScrollBar::add-line:vertical {
+	subcontrol-position: bottom;
+	image: url(:/dark/images/ScrollBar/Ver_Bottom.svg);
+}
+	
+QScrollBar::handle:vertical{
+	background: rgb(86, 90, 96);
+	border-radius: @5$px;
+	min-height: @20$px;
+	width: @5$px;
+}
+
+QScrollBar::handle:horizontal {
+    height: @4$px;
+    background: rgb(75, 78, 82);
+    border-radius: @3$px;
+    min-width: @20$px;
+}
+
+QScrollBar::handle:hover {
+	background: rgb(96, 100, 106);
+}
+
+QScrollBar::handle:pressed {
+	background: rgb(106, 110, 116);
+}
+
+/*ComboBox----------------------------------------------------------------*/
+QComboBox[QComboBoxPressed = false] {
+    font: normal @12$px "Microsoft Yahei";
+    border: @1$px solid rgba(75, 78, 82, 1);
+    border-radius: @4$px;
+    background-color: rgba(53, 56, 59, 1);
+    color: rgba(232, 237, 242, 1);
+    padding-left: @8$px;
+    padding-right: @1$px;
+}
+
+QComboBox[QComboBoxPressed = false]:hover {
+    color: rgb(255,255,255);
+    border: @1$px solid rgba(100, 104, 109, 1);
+    border-radius: @4$px;
+}
+
+QComboBox[QComboBoxPressed = false]:disabled {
+    color: rgb(120, 124, 126);
+}
+
+QComboBox[QComboBoxPressed = true] {
+    font: normal @12$px "Microsoft Yahei";
+    border: @1$px solid rgba(61, 139, 255, 1);
+    border-radius: @4$px;
+    background-color: rgba(48, 50, 54, 1);
+    color: rgba(232, 237, 242, 1);
+    padding-left: @8$px;
+    padding-right: @1$px;
+}
+
+QComboBox[QComboBoxPressed = true]:hover {
+    border: @1$px solid rgba(61, 139, 255, 1);
+    border-radius: @4$px;
+    background-color: rgba(48, 50, 54, 1);
+    color: rgba(232, 237, 242, 1);
+    padding-left: @8$px;
+    padding-right: @1$px;
+}
+
+QComboBox[FpsMismatch=true],
+QComboBox[QComboBoxPressed=false][FpsMismatch=true],
+QComboBox[QComboBoxPressed=true][FpsMismatch=true] {
+    border: @1$px solid #d63636;
+    border-radius: @4$px;
+    background-color: rgba(98, 46, 47, 0.2);
+}
+
+QComboBox[FpsMismatch=true]:hover,
+QComboBox[QComboBoxPressed=false][FpsMismatch=true]:hover,
+QComboBox[QComboBoxPressed=true][FpsMismatch=true]:hover {
+    border: @1$px solid #d63636;
+    border-radius: @4$px;
+    background-color: rgba(98, 46, 47, 0.2);
+}
+
+QComboBox:disabled {
+    color: rgb(120, 124, 126);
+}
+
+/* 下拉展开后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+    color: rgba(204, 209, 215, 1);
+    background-color: rgba(48, 50, 54, 1);
+    show-decoration-selected: 1;
+    border: @1$px solid rgba(75, 78, 82, 1);
+    border-radius: @4$px;
+    padding: @6$px @6$px @6$px @6$px;
+}
+
+/*global QComboBox height*/
+QComboBox QAbstractItemView::item {
+    height: @28$px;
+    border: none;
+    padding: 0px @6$px 0px @6$px;
+    border-radius: @4$px;
+}
+
+QComboBox QAbstractItemView::item:selected,
+QComboBox QAbstractItemView::item:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgba(100, 104, 109, 1);
+    padding: 0px @6$px 0px @6$px;
+    margin: @6$px @6$px @6$px @6$px;
+}
+
+QComboBox::drop-down {
+	border: none;
+	width: @16$px;
+}
+
+QComboBox::down-arrow {
+    image: url(:/dark/images/Combo/Expand.svg);
+    width: @16$px;
+    height: @16$px;
+    margin-right: @4$px;
+}
+
+QComboBox::down-arrow:hover,
+QComboBox::down-arrow:pressed {
+	image: url(:/dark/images/Combo/Expand_Hover.svg);
+	width: @16$px;
+	height: @16$px;
+}
+
+QComboBox::down-arrow:disabled {
+    image: url(:/dark/images/Combo/Expand_Disable.svg);
+    width: @16$px;
+    height: @16$px;
+}
+
+
+QComboBox[QComboBoxPlaceholder = true] {
+    color: rgba(141, 144, 149, 1);
+}
+
+QComboBox[QComboBoxPlaceholder = true]:hover {
+    color: rgba(141, 144, 149, 1);
+}
+
+QComboBox[QComboBoxPlaceholder = false] {
+    color: rgba(232, 237, 242, 1);
+}
+
+QComboBox[QComboPlaceholderBoxPressed = true] {
+    font: normal @12$px "Microsoft Yahei";
+    border: @1$px solid rgba(61, 139, 255, 1);
+    border-radius: @4$px;
+    background-color: rgba(48, 50, 54, 1);
+    color: rgba(141, 144, 149, 1);
+    padding-left: @8$px;
+    padding-right: @1$px;
+}
+
+QComboBox[QComboPlaceholderBoxPressed = true]:hover {
+    border: @1$px solid rgba(61, 139, 255, 1);
+    border-radius: @4$px;
+    background-color: rgba(48, 50, 54, 1);
+    color: rgba(141, 144, 149, 1);
+    padding-left: @8$px;
+    padding-right: @1$px;
+}
+
+QLineEdit[ComboBox2=true] {
+    border: @1$px solid rgb(66, 70, 76);
+    border-radius: @2$px;
+    background-color: rgb(42, 46, 50);
+    color: rgb(220, 220, 220);
+    padding-right: @20$px;
+}
+
+QLineEdit[ComboBox2=true]:read-only {
+   color: rgb(220, 220, 220);
+}
+
+QLineEdit[ComboBox2=true]:disabled {
+   color: rgb(120, 124, 126);
+}
+
+/*QMenu---------------------------------------------------------------------*/
+QMenu {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: rgba(48, 50, 54, 1); /* sets background of the menu */
+    color: rgb(230, 234, 238);
+    border-radius: @8$px;
+    padding-top: @6$px;
+    padding-bottom: @6$px;
+    padding-left: @6$px;
+}
+
+/* 资源/切片列表筛选菜单：仅局部补右侧内边距，避免 hover 圆角被裁切 */
+QMenu[MenuResWndFilter=true] {
+    padding-right: @6$px;
+}
+
+QMenu::item {
+    padding: 0px @20$px 0px @20$px;
+    border: none;
+    height: @28$px;
+}
+
+QMenu[Checkable=true]::item {
+    padding: 0px @28$px 0px@28$px;
+}
+
+QMenu[Checkable=false]::item {
+    padding: 0px @10$px 0px @8$px;
+}
+
+QMenu[TitleBarExistKeySequence=true]::item {
+	padding: 0px @6$px 0px @6$px;
+}
+
+QMenu::separator {
+    height: @1$px;
+    border: none;
+    border-top: @1$px solid rgba(0, 0, 0, 0.7);
+    background-color: rgba(187, 190, 203, 0.3);
+    margin-top: @2$px;
+    margin-bottom: @2$px;
+}
+
+QMenu::item:hover,
+QMenu::item:selected {
+    color: rgb(255, 255, 255);
+    background-color: rgb(100, 104, 109);
+    border-radius: @4$px;
+}
+
+QMenu::item:disabled {
+    background-color: rgba(48, 50, 54, 1);
+    color: rgb(114, 118, 124);
+}
+
+QMenu::indicator:checked {
+	image: url(:/dark/images/Menu/Checked.svg);
+	position: absolute;
+	left: @8$px;
+	width: @16$px;
+	height: @16$px;
+}
+QMenu::indicator:hover/*,
+QMenu::indicator:selected*/ {
+    image: url(:/dark/images/Menu/Hover.svg);
+    position: absolute;
+    left: @8$px;
+    width: @16$px;
+    height: @16$px;
+}
+
+QMenu::icon {
+	position: absolute;
+	left: @8$px;
+	width: @16$px;
+	height: @16$px;
+}
+
+QMenu::right-arrow {
+    image: url(:/dark/images/Menu/More/Normal.svg);
+	width: @16$px;
+	height: @16$px;
+	padding-right: @8$px;
+}
+
+QMenu::right-arrow:disabled {
+    image: url(:/dark/images/Menu/More/Disable.svg);
+}
+QMenu::right-arrow:hover,
+QMenu::right-arrow:selected {
+    image: url(:/dark/images/Menu/More/Down.svg);
+}
+/*QMenu::right-arrow:press {
+    image: url(:/dark/images/Menu/More/Down.svg);
+}*/
+
+/*QLineEdit,QTimeEdit--------------------------------------------------*/
+QTimeEdit,
+QLineEdit {
+    font: normal @12$px "Microsoft Yahei";
+    border-radius: @4$px;
+    padding: 0 @6$px;
+    background-color: rgba(53, 56, 59, 1);
+    border: @1$px solid rgba(75, 78, 82, 1);
+    color: rgb(220,220,220);
+    selection-color: rgb(255, 255, 255);
+}
+
+QLineEdit:hover {
+    color: rgb(255,255,255);
+    border: @1$px solid rgba(100, 104, 109, 1);
+    background-color: rgba(53, 56, 59, 1);
+}
+
+QLineEdit[PassWord=true] {
+    font: normal @8$px "Microsoft Yahei";
+}
+
+QLineEdit[PassWord=false] {
+    font: normal @12$px "Microsoft Yahei";
+}
+
+QTimeEdit:focus,
+QLineEdit:focus {
+    color: rgb(255,255,255);
+    border: @1$px solid rgb(65, 127, 247);
+    background-color: rgba(25, 27, 30, 1);
+}
+
+QDateTimeEdit:read-only,
+QTimeEdit:read-only,
+QLineEdit:read-only {
+	color: rgb(120, 124, 126);
+}
+
+QDateTimeEdit:disabled,
+QTimeEdit:disabled,
+QLineEdit:disabled{
+	color: rgb(120, 124, 126);
+}
+
+QLineEdit[CLineEditEx=true] {
+    padding-left: @6$px;
+    outline: none;
+}
+
+/*使用CLineEditEx类时，只显示文本，显示不完时出省略号，设置此属性即可*/
+QLineEdit[LineEditExReadOnly=true] {
+    padding-left: 0px;
+    border: none;
+    background-color: rgb(39, 41, 44);
+    font: Normal @12$px "Microsoft Yahei";
+    color: rgb(230, 234, 238);
+}
+
+/*QSpinBox,QDoubleSpinBox--------------------------------------------------------------------*/
+QDoubleSpinBox,
+QSpinBox {
+    font: normal @12$px "Microsoft Yahei";
+    border-radius: @4$px;
+    padding-left: @6$px;
+    padding-right: 0px;
+    background-color: rgba(53, 56, 59, 1);
+    border: @1$px solid rgba(75, 78, 82, 1);
+    color: rgb(232,236,242);
+    selection-color: rgb(255, 255, 255);
+}
+
+QDoubleSpinBox:disabled,
+QSpinBox:disabled {
+    color: rgb(120, 124, 126);
+}
+
+QDoubleSpinBox:hover,
+QSpinBox:hover {
+    color: rgb(255,255,255);
+    border: @1$px solid rgba(100, 104, 109, 1);
+    background-color: rgba(53, 56, 59, 1);
+}
+
+QDoubleSpinBox:focus,
+QSpinBox:focus {
+    color: rgb(255,255,255);
+    border: @1$px solid rgb(65, 127, 247);
+    background-color: rgba(25, 27, 30, 1);
+}
+
+QDoubleSpinBox:read-only,
+QSpinBox:read-only {
+	color: rgb(120, 124, 126);
+}
+
+QDoubleSpinBox[BtnVisible=true]::down-button,
+QSpinBox[BtnVisible=true]::down-button {
+    image: url(:/dark/images/SpinBox/downarrow/normal.svg);
+    width: @16$px;
+}
+
+QDoubleSpinBox::down-button:hover,
+QSpinBox::down-button:hover {
+	image: url(:/dark/images/SpinBox/downarrow/hover.svg);
+}
+
+QDoubleSpinBox[BtnVisible=true]::down-button:disabled,
+QSpinBox[BtnVisible=true]::down-button:disabled {
+    image: url(:/dark/images/SpinBox/downarrow/disable.svg);
+}
+
+QDoubleSpinBox[BtnVisible=true]::up-button,
+QSpinBox[BtnVisible=true]::up-button {
+    image: url(:/dark/images/SpinBox/uparrow/normal.svg);
+    width: @16$px;
+}
+
+QDoubleSpinBox::up-button:hover,
+QSpinBox::up-button:hover {
+	image: url(:/dark/images/SpinBox/uparrow/hover.svg);
+}
+
+QDoubleSpinBox[BtnVisible=true]::up-button:disabled,
+QSpinBox[BtnVisible=true]::up-button:disabled {
+    image: url(:/dark/images/SpinBox/uparrow/disable.svg);
+}
+
+QDoubleSpinBox[BtnVisible=false]::down-button,
+QDoubleSpinBox[BtnVisible=false]::up-button {
+    image: url(:/dark/images/SpinBox/uparrow/disable.svg);
+    width: @16$px;
+}
+
+QSpinBox[BtnVisible=false]::down-button,
+QSpinBox[BtnVisible=false]::up-button {
+    image: url(:/dark/images/SpinBox/uparrow/disable.svg);
+    width: @16$px;
+}
+
+QDoubleSpinBox[BtnVisible=false]::up-button:hover,
+QSpinBox[BtnVisible=false]::up-button:hover {
+    image: url(:/dark/images/SpinBox/uparrow/hover.svg);
+}
+QDoubleSpinBox[BtnVisible=false]::down-button:hover,
+QSpinBox[BtnVisible=false]::down-button:hover {
+    image: url(:/dark/images/SpinBox/downarrow/hover.svg);
+}
+/*分隔线背景*/
+QFrame[LineWnd=true] {
+    border-top: @1$px solid rgba(0, 0, 0, 1);
+    background-color: rgba(62, 64, 68, 1);
+}
+QFrame[LineHWnd=true] {
+    border-right: @1$px solid rgba(75, 78, 82, 1);
+    background-color: rgba(18, 20, 22, 1);
+}
+QFrame[CalculatorLineHWnd=true] {
+    background-color: rgba(42, 46, 52, 1);
+}
+/**模式选择按钮*/
+QToolButton[ModeButton] {
+    padding-top: @16$px;
+    background-color: #303236;
+    border-radius: @4$px;
+    border: @1$px solid #4B4E52;
+    font: normal @12$px "Microsoft Yahei";
+    color: #E8EDF2;
+}
+
+
+QFrame[TestChartDisplay=true] {
+    background-color: #121416;
+    border: @1$px solid #303236;
+}
+
+QPushButton[ColorButton=true] {
+    background-image: none;
+    background-color: #417FF9;
+    background-repeat: repeat;
+    background-position: center;
+    padding: 0px;
+    border: @1$px solid #CCD1D7;
+    border-radius: @2$px;
+}
+
+QPushButton[ColorButton=true]:pressed,
+QPushButton[ColorButton=true]:hover 
+{
+    background-image: none;
+    background-color: #417FF9;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+QFrame[ModeColorFrame=true] 
+{
+    background-color: rgb(10, 14, 20);
+    border: @2$px solid rgba(66, 70, 76, 1);
+    border-radius: @4$px;
+}
+
+QComboBox[ResWnd=true]{
+    border: @1$px solid rgb(66, 70, 76);
+    border-right: none;
+    border-radius: @2$px;
+    border-top-right-radius: none;
+    border-bottom-right-radius: none;
+}
+
+QMenu[ResourceWndMenu=true]::item {
+    padding: 0px @12$px 0px @12$px;
+    padding-right: @30$px;
+}
+
+QLabel[SelectRowCount=true] {
+    color: rgba(65, 127, 249, 1);
+}
+
+
+QTreeView[GroupResTreeView=true]{
+	border: @1$px solid rgb(66, 70, 74);
+	background-color: rgb(0, 0, 0);
+    alternate-background-color: rgb(22, 26, 30);
+}
+
+QTreeView[GroupResTreeView=true]::branch:!alternate:!hover:!selected,
+QTreeView[GroupResTreeView=true]::item:!alternate:!hover:!selected {
+	background-color: rgb(14, 18, 22);
+}
+
+QTreeView[GroupResTreeView=true]::branch:alternate:!hover:!selected,
+QTreeView[GroupResTreeView=true]::item:alternate:!hover:!selected {
+    background-color: rgb(22, 26, 30);
+}
+
+/*QScrollArea------------------------------------------------------------*/
+QScrollArea {
+    background-color: rgb(31,33,36);
+    border: none;
+}
+
+QScrollArea[TimelinePropertyHost=true],
+QScrollArea[TimelinePropertyHost=true] > QWidget > QWidget {
+    background-color: rgb(31, 33, 36);
+}
+
+QScrollArea[ShowTextDialog = true] {
+    background-color: rgb(39, 41, 44);
+    border: none;
+}
+
+/*QCheckBox--------------------------------------------------------------------*/
+QCheckBox {
+    font: Normal @12$px "Microsoft Yahei";
+    color: rgb(220,220,220);
+    spacing: @8$px;
+}
+
+QCheckBox:disabled {
+	color: rgb(116, 118, 124);
+}
+
+QCheckBox::indicator {
+	width: @16$px;
+	height: @16$px;
+}
+
+QCheckBox::indicator:unchecked {
+	image: url(:/dark/images/CheckBox/Unchecked/Normal.png);
+}
+
+QCheckBox::indicator:unchecked:disabled {
+    image: url(:/dark/images/CheckBox/Unchecked/Disable.png);
+}
+
+QCheckBox::indicator:checked {
+    image: url(:/dark/images/CheckBox/Checked/Normal.png);
+}
+
+QCheckBox::indicator:checked:disabled {
+    image: url(:/dark/images/CheckBox/Checked/Disable.png);
+}
+/*全选复选框*/
+/*QCheckBox[SelectAll=true]::indicator:checked {
+    image: url(:/dark/images/CheckBox/SelectAll/Checked/Normal.svg);
+}*/
+
+QCheckBox[SelectAll=true]::indicator:indeterminate {
+    image: url(:/dark/images/CheckBox/PartiallyChecked/Normal.svg);
+}
+QCheckBox[SelectAll=true]::indicator:indeterminate:hover {
+    image: url(:/dark/images/CheckBox/PartiallyChecked/Normal.svg);
+}
+QCheckBox[SelectAll=true]::indicator:indeterminate:pressed {
+    image: url(:/dark/images/CheckBox/PartiallyChecked/Normal.svg);
+}
+
+/*QSlider--------------------------------------------------------------------*/
+QSlider {
+    background-color: none;
+    border: none;
+    padding-left: @3$px;
+    padding-right: @3$px;
+}
+
+QSlider::groove:horizontal {
+    border: none;
+    height: @4$px;
+    padding-left: -@3$px;
+    padding-right: -@3$px;
+}
+
+QSlider::groove:vertical {
+	border: none;
+	width: @4$px;
+	padding-top: -@3$px;
+	padding-bottom: -@3$px;
+}
+
+QSlider::handle:horizontal {
+	background: rgb(204, 209, 215);
+	border: none;
+	width: @6$px;
+	margin: -@6$px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+	border-radius: @3$px;
+}
+
+QSlider::handle:vertical {
+    background: rgb(204, 209, 215);
+    border: none;
+    width: height;
+    margin: 0 -@6$px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    border-radius: @3$px;
+}
+
+QSlider::add-page:horizontal {
+	background: rgb(42, 46, 50);
+}
+
+QSlider::sub-page:horizontal {
+	background: rgb(54, 86, 150);
+}
+
+QLabel[SliceWndEmptyTips1=true] {
+    color: rgb(255,255,255);
+    text-align: center;
+}
+QLabel[SliceWndEmptyTips2=true] {
+    color: gray;
+    text-align: center;
+}
+/*MsgBox-------------------------------------------------------------------------------------*/
+QMessageBox {
+    border: none;
+    background-color: rgb(39, 41, 44);
+    width: @468$px;
+}
+
+    QMessageBox QLabel {
+        background-color: rgb(39, 41, 44);
+    }
+
+/*QProgressBar------------------------------------------------------------------------------------------------*/
+QProgressBar {
+    font: normal @12$px "Microsoft Yahei";
+	background-color: rgb(200, 200, 200);
+    border-radius: @3$px;
+    border: none;
+}
+
+QProgressBar::chunk {
+	background-color: rgba(65, 127, 249, 1);
+	border-radius: @3$px;
+	border: none;
+}
+
+/*TextEditor*/
+QPushButton[FontStyleBtn=true] {
+    background-color: transparent;
+}
+
+QPushButton[FontStyleBtn=true]:checked {
+    background-color: rgb(65, 127, 249);
+}
+
+QPushButton[FontStyleBtn=true]:disabled{
+    background-color: transparent;
+}
+
+QPushButton[FontBlodBtn=true] {
+    border-image: url(:/dark/images/TextEditor/Bold.svg);
+}
+
+QPushButton[FontItalicBtn=true] {
+    border-image: url(:/dark/images/TextEditor/Italic.svg);
+}
+
+QPushButton[FontUnderLineBtn=true] {
+    border-image: url(:/dark/images/TextEditor/UnderLine.svg);
+}
+
+QPushButton[AlignHcenterBtn=true] {
+    border-image: url(:/dark/images/TextEditor/HAlignCenter.svg);
+}
+
+QPushButton[AlignHcenterBtn=true]:disabled{
+    border-image: url(:/dark/images/TextEditor/HAlignCenter_disable.svg);
+}
+
+QPushButton[AlignLeftBtn=true] {
+    border-image: url(:dark/images/TextEditor/HAlignLeft.svg);
+}
+
+QPushButton[AlignLeftBtn=true]:disabled{
+    border-image: url(:dark/images/TextEditor/HAlignLeft_disable.svg);
+}
+
+QPushButton[AlignRightBtn=true] {
+    border-image: url(:dark/images/TextEditor/HAlignRight.svg);
+}
+
+QPushButton[AlignRightBtn=true]:disabled{
+    border-image: url(:dark/images/TextEditor/HAlignRight_disable.svg);
+}
+
+QPushButton[AlignTopBtn=true] {
+    border-image: url(:/dark/images/TextEditor/VAlignTop.svg);
+}
+
+QPushButton[AlignVcenterBtn=true] {
+    border-image: url(:/dark/images/TextEditor/VAlignCenter.svg);
+}
+
+QPushButton[AlignBottomBtn=true] {
+    border-image: url(:/dark/images/TextEditor/VAlignBottom.svg);
+}
+
+QTextEdit {
+    background-color: rgb(0, 0, 0);
+    border-width: @1$px;
+}
+
+QRadioButton {
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(255, 255, 255);
+}
+
+QRadioButton:disabled {
+	color: rgb(116, 118, 124);
+}
+
+QRadioButton::indicator {
+	width: @16$px;
+	height: @16$px;
+	image: url(:/dark/images/RadioButton/Unchecked/Normal.svg);
+}
+
+QRadioButton::indicator:disabled {
+	image: url(:/dark/images/RadioButton/Unchecked/Disable.svg);
+}
+
+QRadioButton::indicator:checked {
+	image: url(:/dark/images/RadioButton/Checked/Normal.svg);
+}
+
+QRadioButton::indicator:checked:disabled {
+	image: url(:/dark/images/RadioButton/Checked/Disable.svg);
+	color: rgb(116, 118, 124);
+}
+
+QRadioButton[PackProjectBtn=true]::indicator {
+	image: url(:/dark/images/RadioButton/Unchecked/Circle_unChecked.svg);
+}
+
+QRadioButton[PackProjectBtn=true]::indicator:checked {
+	image: url(:/dark/images/RadioButton/Checked/Circle_checked.svg);
+}
+
+QRadioButton[OutSliceMsgBtn=true] {
+    font: normal @12$px "Microsoft Yahei";
+    color: rgba(204, 208, 215, 1);
+}
+
+QRadioButton[OutSliceMsgBtn=true]::indicator {
+    image: url(:/dark/images/RadioButton/Unchecked/Circle_unChecked.svg);
+}
+
+QRadioButton[OutSliceMsgBtn=true]::indicator:checked {
+	image: url(:/dark/images/RadioButton/Checked/Circle_checked.svg);
+}
+
+QColorDialog {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: rgb(22, 26, 30);
+}
+
+/*软件设计相关窗口------------------------------------------------------------------------------------------------*/
+QFrame[SettingLeft=true] {
+    background-color: rgba(31, 33, 36, 1);
+    border-right: @1$px solid rgba(0, 0, 0, 1);
+}
+
+QFrame[SettingBottom=true] {
+    background-color: rgba(42, 255, 52, 1);
+}
+
+QLabel[SettingRightView=true],
+QCheckBox[SettingRightView=true] {
+    color: rgb(200, 204, 208);
+}
+
+/*QDateEdit----------------------------------------------------------------------------------------------------------*/
+QDateEdit {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: rgb(42, 46, 50);
+    border: @1$px solid rgb(66, 70, 76);
+    color: rgb(220, 220, 220);
+    padding-left: @6$px;
+}
+
+QDateEdit::drop-down {
+    border: none;
+    width: @12$px;
+    image: url(:/dark/images/DateEdit/DateMore/Normal.svg);
+}
+
+QDateEdit::drop-down:hover:!pressed {
+    image: url(:/dark/images/DateEdit/DateMore/Hover.svg);
+}
+
+QDateEdit::drop-down:pressed {
+    image: url(:/dark/images/DateEdit/DateMore/Down.svg);
+}
+
+QDateEdit::drop-down:disabled {
+    image: url(:/dark/images/DateEdit/DateMore/Disable.svg);
+}
+
+/*日历*/
+QMenu[CalendarMenu = true] {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: rgba(45, 47, 50, 1); /* sets background of the menu */
+    color: rgb(230, 234, 238);
+    border-radius: @8$px;
+    padding-top: @6$px;
+    padding-bottom: @6$px;
+    padding-left: @6$px;
+}
+
+QCalendarWidget QTableView {
+    padding-top: 0px;
+    padding-left: @20$px;
+    padding-bottom: @20$px;
+    padding-right: @20$px;
+    alternate-background-color: rgba(45, 47, 50, 1);
+    font: normal @14$px "Microsoft Yahei";
+}
+
+/*这里是激活的日期的样式也就是当前这个月*/
+QCalendarWidget QAbstractItemView:enabled {
+    background-color: rgba(45, 47, 50, 0);
+    color: rgba(232, 236, 242, 1);
+    selection-background-color: transparent;
+    selection-color: rgb(255, 255, 255);
+    outline: none;
+}
+
+/*这里是其他月份的样式*/
+QCalendarWidget QAbstractItemView:disabled {
+    color: rgba(100, 104, 109, 1);
+}
+
+QWidget[Calendar = true] {
+    background-color: rgba(45, 47, 50, 1);
+}
+
+/*加密狗*/
+QLabel[DongleImage=true] {
+    border-image: url(":/dark/images/Dongle/DongleImage.png");
+	border-radius: 0px;
+	border-bottom-left-radius: @8$px;
+}
+
+QLabel[DongleBigTip=true] {
+    font-size: @18$px;
+    font-weight:bold;
+    color:white;
+}
+
+QLabel[DongleTip=true] {
+    color:rgb(160,164,168);
+}
+
+QLabel[DongleWndTryOutTip=true] {
+    color: red;
+}
+
+QPushButton[DongleWndTryOut=true] {
+    background-color: rgb(65,127,249);
+    color: white;
+}
+
+QPushButton[DongleWndTryOut=true]:hover {
+	background-color: rgb(100,150,249);
+	color: white;
+}
+
+/*日志相关*/
+QFrame[LogFrame=true] {
+    background-color: rgba(36, 38, 41, 1);
+    border: none;
+    border-radius: @2$px;
+}
+
+QLabel[LogCurPageLabel=true] {
+    color: #417FF9;
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+}
+
+QDateTimeEdit {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: rgba(53, 55, 59, 1);
+    border: @1$px solid rgba(75, 78, 82, 1);
+    color: rgba(232, 236, 242, 1);
+    padding-left: @8$px;
+    border-radius: @4$px;
+}
+
+QDateTimeEdit:hover {
+    background-color: rgba(75, 78, 82, 1);
+    border: @1$px solid rgba(100, 104, 109, 1);
+}
+
+QDateTimeEdit:focus{
+    background-color: rgba(48, 50, 54, 1);
+    border: @1$px solid rgba(61, 139, 255, 1);
+}
+
+/*--------------------------DockWidget------------------------------*/
+QWidget[DockWidget=true] {
+    background-color: transparent;
+}
+
+QSplitter{
+	background-color: rgb(10, 14, 20);
+}	
+
+QSplitter[MainWindowSplitter=true]::handle {
+	background-color: rgb(10, 14, 20);
+}
+
+QSplitter[MainWindowSplitter=true]::handle:horizontal {
+	width: @3$px;
+}
+
+QSplitter[MainWindowSplitter=true]::handle:vertical {
+	height: @3$px;
+}
+
+QLabel[DockWidgetTitleName=true] {
+    color: white;
+    font: bold @14$px "Microsoft Yahei";
+}
+
+QLabel[DockWidgetTitleName=false] {
+    color: rgb(170, 174, 179);
+    font: normal @14$px "Microsoft Yahei";
+}
+
+QFrame[DockWidgetTab=true] {
+    background-color: transparent;
+    border-top-left-radius: @2$px;
+    border-top-right-radius: @2$px;
+}
+
+QFrame[DockAreaTitleBar=true] {
+    background-color: rgb(48, 50, 54);
+    border-top-left-radius: @2$px;
+    border-top-right-radius: @2$px;
+    border-bottom: @1$px solid rgb(18, 20, 22);
+}
+
+QFrame[dockWidgetContent=true] {
+    border: @1$px solid rgb(48, 50, 54);
+}
+
+QWidget[DockOverlayCross=true]{
+	background-color: rgb(255, 70, 76);
+}
+
+QFrame[DockAreaTabBar=true] {
+    background-color: transparent;
+    border-left: @1$px solid rgb(48, 50, 54);
+    border-right: @1$px solid rgb(48, 50, 54);
+    border-top: @1$px solid rgb(48, 50, 54);
+    border-top-left-radius: @2$px;
+    border-top-right-radius: @2$px;
+}
+
+QFrame[tabsContainerWidget=true]{
+	background-color: transparent;
+}
+
+QFrame[tabsWidget=true] {
+    background-color: rgb(255, 0, 0);
+}
+
+QSplitterHandle{
+	background-color: rgb(255, 0, 0);
+}
+
+QFrame[DockTitleBarTitleBar=true] {
+    background-color: rgb(66, 70, 76);
+    border: 0px;
+    border-bottom: @1$px solid rgb(33, 35, 38);
+}
+
+QWidget[FloatContainer=true]{
+	border: @1$px solid rgb(0, 0, 0);
+}
+
+QFrame[DockAreaWidgetFrame=true] {
+    background-color: rgb(31, 33, 36);
+    border-top-left-radius: @4$px;
+    border-top-right-radius: @4$px;
+    border: @1$px solid rgb(48, 50, 54);
+}
+/*IconButton*/
+QPushButton[CIconButtonLeft=true] {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: left;
+    background-color: rgb(75, 78, 82);
+    border-radius: @4$px;
+    border-top: @1$px solid rgb(104, 106, 110);
+    padding: 0px;
+    color: rgb(255, 255, 255);
+}
+
+QPushButton[CIconButtonLeft=true]:hover {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: left;
+    background-color: rgb(100, 104, 109);
+    border-radius: @4$px;
+    border-top: @1$px solid rgb(125, 128, 132);
+    padding: 0px;
+}
+QPushButton[CIconButtonLeft=true]:pressed,
+QPushButton[CIconButtonLeft=true]:checked {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: left;
+    background-color: rgb(141, 145, 149);
+    border-radius: @4$px;
+    border-top: @1$px solid rgb(159, 163, 166);
+    padding: 0px;
+}
+
+QPushButton[CIconButtonLeft=true]:checked {
+    font-weight:600;
+}
+QPushButton[CIconButtonLeft=true]:!checked {
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+}
+
+/*CameraRecord*/
+QPushButton[CameraRecordStartBtn=true] {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(24, 62, 118, 1);
+    border-radius: @4$px;
+    border: none;
+    padding: 0px;
+    color: rgba(61, 139, 255, 1);
+}
+
+QPushButton[CameraRecordStartBtn=true]:hover {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(24, 62, 118, 1);
+    border-radius: @4$px;
+    border: @1$px solid rgba(61, 139, 255, 1);
+    padding: 0px;
+    color: rgba(61, 139, 255, 1);
+}
+
+QPushButton[CameraRecordStartBtn=true]:pressed {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(35, 79, 145, 1);
+    border-radius: @4$px;
+    border: @1$px solid rgba(61, 139, 255, 1);
+    padding: 0px;
+    color: rgba(61, 139, 255, 1);
+}
+
+QPushButton[CameraRecordStartBtn=true]:disabled {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(24, 62, 118, 1);
+    border-radius: @4$px;
+    border: none;
+    padding: 0px;
+    color: rgba(35, 79, 145, 1);
+}
+
+QPushButton[CameraRecordStopBtn=true] {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(98, 46, 47, 1);
+    border-radius: @4$px;
+    border: none;
+    padding: 0px;
+    color: rgba(214, 54, 54, 1);
+}
+
+QPushButton[CameraRecordStopBtn=true]:hover {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(98, 46, 47, 1);
+    border-radius: @4$px;
+    border: @1$px solid rgba(214, 54, 54, 1);
+    padding: 0px;
+    color: rgba(255, 77, 79, 1);
+}
+
+QPushButton[CameraRecordStopBtn=true]:pressed {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(131, 58, 60, 1);
+    border-radius: @4$px;
+    border: @1$px solid rgba(214, 54, 54, 1);
+    padding: 0px;
+    color: rgba(214, 54, 54, 1);
+}
+
+QPushButton[CameraRecordStopBtn=true]:disabled {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(98, 46, 47, 1);
+    border-radius: @4$px;
+    border: none;
+    padding: 0px;
+    color: rgba(131, 58, 60, 1);
+}
+
+QPushButton[CameraRecordScreenshotBtn=true] {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(53, 55, 59, 1);
+    border-radius: @4$px;
+    border: none;
+    padding: 0px;
+    color: rgba(170, 174, 179, 1);
+}
+
+QPushButton[CameraRecordScreenshotBtn=true]:hover {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(53, 55, 59, 1);
+    border-radius: @4$px;
+    border: @1$px solid rgba(100, 104, 109, 1);
+    padding: 0px;
+    color: rgba(170, 174, 179, 1);
+}
+
+QPushButton[CameraRecordScreenshotBtn=true]:pressed {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(62, 64, 68, 1);
+    border-radius: @4$px;
+    border: @1$px solid rgba(100, 104, 109, 1);
+    padding: 0px;
+    color: rgba(170, 174, 179, 1);
+}
+
+QPushButton[CameraRecordScreenshotBtn=true]:disabled {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(53, 55, 59, 1);
+    border-radius: @4$px;
+    border: none;
+    padding: 0px;
+    color: rgba(100, 104, 109, 1);
+}
+
+QPushButton[CGenerateButton=true] {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgb(75, 78, 82);
+    border-radius: @4$px;
+    border-top: @1$px solid rgb(104, 106, 110);
+    padding: 0px;
+    color: rgba(255, 255, 255, 1);
+}
+
+QPushButton[CGenerateButton=true]:hover {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgb(100, 104, 109);
+    border-radius: @4$px;
+    border-top: @1$px solid rgb(125, 128, 132);
+    padding: 0px;
+    color: rgba(255, 255, 255, 1);
+}
+
+QPushButton[CGenerateButton=true]:pressed,
+QPushButton[CGenerateButton=true]:checked {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgb(141, 145, 149);
+    border-radius: @4$px;
+    border-top: @1$px solid rgb(159, 163, 166);
+    padding: 0px;
+    color: rgba(255, 255, 255, 1);
+}
+QPushButton[CGenerateButton=true]:disabled {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    background-color: rgba(53, 55, 59, 1);
+    border-radius: @4$px;
+    border-top: @1$px solid rgb(85, 87, 91);
+    padding: 0px;
+    color: rgba(100, 104, 109, 1);
+}
+
+/*预设模型编辑：画面内外翻转按钮------------------------------------------------*/
+QPushButton[InnerOuterFlipBtn=true]{
+    background-color: rgba(75, 78, 82, 1);
+    border: 0px;
+    border-top: @1$px solid rgba(104, 106, 110, 1);
+}
+
+QPushButton[InnerOuterFlipBtn=true]:hover {
+    background-color: rgba(75, 78, 82, 1);
+    border: 0px;
+    border-top: @1$px solid rgba(104, 106, 110, 1);
+}
+
+QPushButton[InnerOuterFlipBtn=true]:pressed{
+    background-color: rgba(95, 98, 102, 1);
+    border: 0px;
+    border-top: @1$px solid rgba(104, 106, 110, 1);
+}
+
+QLabel[ScreenPictureLabel=true]{
+    color: rgba(204, 208, 215, 1);
+}
+
+/*分辨率计算器----------------------------------------------------------------*/
+QTextEdit[CalculatorResultEdit=true] {
+    border: none;
+    padding-top: @8$px;
+    padding-bottom: 0px;
+    padding-left: @21$px;
+    padding-right: @21$px;
+}
+QTextEdit[CalculatorInputEdit=true] {
+    border: none;
+    padding-top: 0px;
+    padding-bottom: @10$px;
+    padding-left: @21$px;
+    padding-right: @21$px;
+}
+QTextEdit[CalculatorHistoryEdit=true] {
+    border: none;
+    padding-top: @12$px;
+    padding-bottom: 0px;
+    padding-left: @16$px;
+    padding-right: @15$px;
+}
+
+QPushButton[CalculatorBlackBtn=true] {
+    border: none;
+    border-radius: 0;
+    font: @24$px "Microsoft Yahei";
+    color: rgba(230, 234, 238, 1);
+    background-color: rgb(42, 46, 50);
+}
+
+QPushButton[CalculatorBlueBtn=true] {
+    border: none;
+    border-radius: 0;
+    font: @32$px "Microsoft Yahei";
+    color: rgba(230, 234, 238, 1);
+    background-color: rgb(65, 127, 249);
+    text-align: center;
+    vertical-align: middle;
+    padding-bottom: @4$px;
+}
+
+QPushButton[CalculatorGreenBtn=true] {
+    border: none;
+    border-radius: 0;
+    font: @32$px "Microsoft Yahei";
+    color: rgba(230, 234, 238, 1);
+    background-color: rgba(8, 180, 77, 1);
+    text-align: center;
+    vertical-align: middle;
+    padding-bottom: @4$px;
+}
+
+QPushButton[CalculatorGrayBtn=true] {
+    border: none;
+    border-radius: 0;
+    font: @24$px "Microsoft Yahei";
+    color: rgba(230, 234, 238, 1);
+    background-color: rgba(66, 70, 74, 1);
+    text-align: center;
+    vertical-align: middle;
+}
+
+QLabel[CalculatorClearLabel=true] {
+    border: none;
+    border-radius: 0;
+    background-color: black;
+    border-bottom-right-radius: @7$px;
+}
+QPushButton[CalculatorClearBtn=true]:disabled {
+    border: none;
+    border-radius: 0;
+    font: @14$px "Microsoft Yahei";
+    color: rgba(44, 77, 139, 1);
+    background-color: black;
+    text-align: right;
+}
+QPushButton[CalculatorClearBtn=true] {
+    border: none;
+    border-radius: 0;
+    font: @14$px "Microsoft Yahei";
+    color: rgba(65, 127, 249, 1);
+    background-color: black;
+    text-align: right;
+}
+QPushButton[CalculatorClearBtn=true]:hover {
+    border: none;
+    border-radius: 0;
+    font: @14$px "Microsoft Yahei";
+    color: rgba(100, 150, 249, 1);
+    background-color: black;
+    text-align: right;
+}
+
+QPushButton[CalculatorClearBtn=true]:pressed {
+    border: none;
+    border-radius: 0;
+    font: @14$px "Microsoft Yahei";
+    color: rgba(30, 90, 208, 1);
+    background-color: black;
+    text-align: right;
+}
+
+
+QPushButton[SvgIamgeTextButton=true] {
+    background-color: rgba(0,0,0,0);
+    text-align:right;
+}
+
+QPushButton[SvgIamgeTextButton=true]:hover {
+    background-color: rgba(42,46,50,255);
+    text-align: right;
+}
+
+QPushButton[SvgIamgeTextButton=true]:pressed {
+    background-color: rgba(66,70,74,255);
+    text-align: right;
+}
+
+QFrame[CustomDisplayBG=true] {
+    background-color: rgb(22, 26, 30);
+}
+QFrame[CustomDisplayBG=true]:disabled {
+}
+
+QLabel[NumErrorTip=true] {
+    font: @12$px "Microsoft Yahei";
+    color: rgb(230, 43, 45);
+}
+/*背景透明的窗口*/
+QWidget[TransparentWnd=true] {
+    background-color: transparent;
+}
+
+/*素材库*/
+QFrame[ResourceWnd=true] {
+    background-color: rgb(31, 33, 36);
+}
+
+QFrame[ResourceNode=true] {
+    background-color: transparent;
+}
+
+QLabel[ResourceNodeName=true] {
+    color: rgb(204, 209, 215);
+    font: normal @12$px "Microsoft Yahei";
+}
+
+QLabel[ResourceNodeName=false] {
+    color: rgb(230, 43, 45);
+    font: normal @12$px "Microsoft Yahei";
+    text-decoration: line-through;
+}
+
+QPushButton[ResourceNodeBtn=true] {
+    background-color: rgb(31, 33, 36);
+}
+
+/*竖直滚动条-------------------------------------------------------------*/
+QScrollBar[ResourceScrollBar=true]::vertical {
+    width: @8$px;
+    padding-top: @4$px;
+    padding-bottom: @4$px;
+    margin-right: @2$px;
+    background: transparent;
+}
+
+/* 上侧控制块 */
+QScrollBar[ResourceScrollBar=true]::sub-line:vertical {
+    subcontrol-position: top;
+    height: 0px;
+    width: 0px;
+}
+
+/* 下侧控制块 */
+QScrollBar[ResourceScrollBar=true]::add-line:vertical {
+    subcontrol-position: bottom;
+    height: 0px;
+    width: 0px;
+}
+
+QScrollBar[ResourceScrollBar=true]::handle:vertical {
+    background: rgb(75, 78, 82);
+    border-radius: @3$px;
+    min-height: @20$px;
+    width: @4$px;
+}
+
+QScrollBar[ResourceScrollBar=true]::handle:hover {
+    background: rgb(96, 100, 106);
+}
+
+QScrollBar[ResourceScrollBar=true]::handle:pressed {
+    background: rgb(106, 110, 116);
+}
+
+/*ComBoBox竖直滑动条*/
+QScrollBar[ComBoBoxScrollBar=true]::vertical {
+    width: @5$px;
+    padding-top: @2$px;
+    padding-bottom: @2$px;
+    margin-right: 0px;
+    background: transparent;
+}
+
+/* 上侧控制块 */
+QScrollBar[ComBoBoxScrollBar=true]::sub-line:vertical {
+    subcontrol-position: top;
+    height: 0px;
+    width: 0px;
+}
+
+/* 下侧控制块 */
+QScrollBar[ComBoBoxScrollBar=true]::add-line:vertical {
+    subcontrol-position: bottom;
+    height: 0px;
+    width: 0px;
+}
+
+QScrollBar[ComBoBoxScrollBar=true]::handle:vertical {
+    background: rgb(75, 78, 82);
+    border-radius: @2$px;
+    min-height: @20$px;
+    width: @3$px;
+}
+
+QScrollBar[ComBoBoxScrollBar=true]::handle:hover {
+    background: rgb(96, 100, 106);
+}
+
+QScrollBar[ComBoBoxScrollBar=true]::handle:pressed {
+    background: rgb(106, 110, 116);
+}
+
+QFrame[ColorDialogTitle=true] {
+    background-color: rgba(39, 41, 44, 1);
+    border-bottom: none;
+}
+
+QLabel[ColorDialogTitleBarName=true]{
+    font-weight: 500;
+    color: rgb(232, 237, 242);
+    background-color: transparent;
+    padding-left: -@1$px;
+}
+
+QSpinBox[ColorDialogSpinBox=true] {
+    background-color: rgba(18, 20, 22, 1);
+    border: none;
+    border-bottom: @1$px solid rgb(64,65,67);
+}
+
+QFrame[ShortcutTableFrame=true] {
+    background-color: rgba(39, 41, 44, 1);
+    border-radius: 0px;
+    border: none;
+}
+
+QWidget[ShortcutTableWidget=true] {
+    background-color: rgba(39, 41, 44, 1);
+    border-radius: 0px;
+    border: none;
+}
+
+QPushButton[SvgIamgeButton=true] {
+    background-color: transparent;
+}
+QPushButton[SvgIamgeButton=true]:hover {
+    background-color: transparent;
+}
+QPushButton[SvgIamgeButton=true]:pressed {
+    background-color: transparent;
+}
+
+/*上下箭头设置为左右箭头*/
+QDoubleSpinBox[LRIconSpinBox=true]:up-button {
+    subcontrol-origin: border;
+    subcontrol-position: right;
+    image: url(:/dark/images/SpinBox/rightarrow/normal.svg);
+    width: @16$px;
+    height: @16$px;
+}
+
+QDoubleSpinBox[LRIconSpinBox=true]:down-button {
+    subcontrol-origin: border;
+    subcontrol-position: left;
+    image: url(:/dark/images/SpinBox/leftarrow/normal.svg);
+    width: @16$px;
+    height: @16$px;
+}
+
+QDoubleSpinBox[LRIconSpinBox=false]:up-button {
+    subcontrol-origin: border;
+    subcontrol-position: right;
+    image: url(:/dark/images/SpinBox/leftarrow/disable.svg);
+    width: @16$px;
+    height: @16$px;
+}
+
+QDoubleSpinBox[LRIconSpinBox=false]:down-button {
+    subcontrol-origin: border;
+    subcontrol-position: left;
+    image: url(:/dark/images/SpinBox/leftarrow/disable.svg);
+    width: @16$px;
+    height: @16$px;
+}
+
+QDoubleSpinBox[LRIconSpinBox=true]:up-button:hover {
+    subcontrol-origin: border;
+    subcontrol-position: right;
+    image: url(:/dark/images/SpinBox/rightarrow/hover.svg);
+}
+
+QDoubleSpinBox[LRIconSpinBox=true]:down-button:hover {
+    subcontrol-position: left;
+    image: url(:/dark/images/SpinBox/leftarrow/hover.svg);
+}
+QDoubleSpinBox[LRIconSpinBox=false]:up-button:hover {
+    subcontrol-origin: border;
+    subcontrol-position: right;
+    image: url(:/dark/images/SpinBox/rightarrow/hover.svg);
+}
+
+QDoubleSpinBox[LRIconSpinBox=false]:down-button:hover {
+    subcontrol-position: left;
+    image: url(:/dark/images/SpinBox/leftarrow/hover.svg);
+}
+QDoubleSpinBox[LRIconSpinBox=true]:up-button:pressed {
+    subcontrol-origin: border;
+    subcontrol-position: right;
+    image: url(:/dark/images/SpinBox/rightarrow/down.svg);
+}
+
+QDoubleSpinBox[LRIconSpinBox=true]:down-button:pressed {
+    subcontrol-position: left;
+    image: url(:/dark/images/SpinBox/leftarrow/down.svg);
+}
+
+QDoubleSpinBox[LRIconSpinBox=false]:up-button:pressed {
+    subcontrol-origin: border;
+    subcontrol-position: right;
+    image: url(:/dark/images/SpinBox/rightarrow/down.svg);
+}
+
+QDoubleSpinBox[LRIconSpinBox=false]:down-button:pressed {
+    subcontrol-position: left;
+    image: url(:/dark/images/SpinBox/leftarrow/down.svg);
+}
+
+QDoubleSpinBox[LRIconSpinBox=true]:up-button:disabled {
+    subcontrol-origin: border;
+    subcontrol-position: right;
+    image: url(:/dark/images/SpinBox/rightarrow/disable.svg);
+}
+
+QDoubleSpinBox[LRIconSpinBox=true]:down-button:disabled {
+    subcontrol-position: left;
+    image: url(:/dark/images/SpinBox/rightarrow/disable.svg);
+}
+
+QDoubleSpinBox[LRIconSpinBox=false]:up-button:disabled {
+    subcontrol-origin: border;
+    subcontrol-position: right;
+    image: url(:/dark/images/SpinBox/leftarrow/disable.svg);
+}
+
+QDoubleSpinBox[LRIconSpinBox=false]:down-button:disabled {
+    subcontrol-position: left;
+    image: url(:/dark/images/SpinBox/leftarrow/disable.svg);
+}
+
+QScrollBar[shortcutBar=true]::horizontal {
+    height: @8$px;
+    padding-left: @4$px;
+    padding-right: @4$px;
+    margin-right: @2$px;
+    background-color: rgba(39, 41, 44, 1);
+}
+QScrollArea[shortcutScrollArea=true] {
+    background-color: rgba(39, 41, 44, 1);
+}
+QScrollBar[LockPicScrollBar=true]::vertical {
+    width: @8$px;
+    padding-top: @4$px;
+    padding-bottom: @4$px;
+    margin-right: @2$px;
+    background: transparent;
+}
+QScrollBar[LockPicScrollBar=true]::sub-line:vertical {
+    subcontrol-position: top;
+    height: 0px;
+    width: 0px;
+}
+QScrollBar[LockPicScrollBar=true]::add-line:vertical {
+    subcontrol-position: bottom;
+    height: 0px;
+    width: 0px;
+}
+QScrollBar[LockPicScrollBar=true]::handle:vertical {
+    background: rgb(75, 78, 82);
+    border-radius: @3$px;
+    min-height: @20$px;
+    width: @4$px;
+}
+QScrollBar[LockPicScrollBar=true]::handle:hover {
+    background: rgb(96, 100, 106);
+}
+QScrollBar[LockPicScrollBar=true]::handle:pressed {
+    background: rgb(106, 110, 116);
+}
+QScrollArea[LockPicArea=true]::viewport {
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 4px;
+}
+QPushButton[LockAddPicBtn=true] { 
+    border: 1px dashed rgba(100, 104, 109, 1);
+    background-color: rgba(45, 47, 50, 1);
+    border-radius: 4px;
+}
+QPushButton[LockAddPicBtn=true]:hover {
+    border-color: rgba(22, 104, 220, 1);
+}
+QWidget[LockPicSelectFrame=true] {
+    border: 1px solid rgba(75, 78, 82, 1);
+    border-radius: 4px;
+    background: rgba(45, 47, 50, 1);
+}
+QWidget[LockPicSelected=true] {
+    border: 1px solid rgba(22, 104, 220, 1);
+}
+QPushButton[LockThumbDelBtn=true] {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 9px;
+    padding: 0px;
+}
+QPushButton[LockThumbDelBtn=true]:hover {
+    background-color: rgba(22, 104, 220, 0.85);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+/* 锁屏界面 */
+QPushButton[BtnShowLockScreenWnd=true],
+QPushButton[BtnActionLockScreenWnd=true],
+QPushButton[BtnShowLockScreenWnd=true]:hover:!pressed,
+QPushButton[BtnActionLockScreenWnd=true]:hover:!pressed,
+QPushButton[BtnShowLockScreenWnd=true]:pressed,
+QPushButton[BtnActionLockScreenWnd=true]:pressed{
+    border: none;
+    background: transparent;
+}
+QLabel[LabelLockScreenTextWnd=true] {
+    color: rgb(255, 255, 255);
+    font: normal @18$px "Microsoft Yahei";
+    background: transparent;
+}
+QLineEdit[PasswordLockScreenWnd=true] {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: rgba(45, 47, 50, 180);
+    border: @1$px solid rgba(100, 104, 109, 1);
+    border-radius: @20$px;
+    padding-left: @16$px;
+    padding-right: @40$px;
+    color: rgb(255, 255, 255);
+    selection-background-color: rgba(116, 120, 124, 1);
+}
+QLabel[LabelLockScreenWnd=true] {
+    color: rgb(255, 120, 120);
+    font: normal @12$px "Microsoft Yahei";
+    background: transparent;
+}
+/*------------------------------网格滑动条------------------------------------*/
+QSlider[GridSlider = true] {
+    background-color: none;
+    border: none;
+    padding-left: @3$px;
+    padding-right: @3$px;
+}
+
+QSlider[GridSlider = true]::groove:horizontal {
+    border: none;
+    height: @5$px;
+    padding-left: -@3$px;
+    padding-right: -@3$px;
+}
+
+QSlider[GridSlider = true]::sub-page:horizontal {
+    border-radius: @2$px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgba(61, 139, 255, 1), stop:1 rgba(61, 195, 255, 1));
+}
+
+QSlider[GridSlider = true]::add-page:horizontal {
+    border-radius: @2$px;
+    background: rgba(75, 78, 82, 1);
+}
+
+
+QFrame[SearchEdit=true] {
+    border-radius: @4$px;
+    padding-left: @8$px;
+    background-color: rgb(18,20,22);
+}
+
+QFrame[SearchEdit=false] {
+    border-radius: @4$px;
+    background-color: rgb(65,66,67);
+}
+
+QLineEdit[SearchEdit=true] {
+    border: 0px;
+    padding-left: @4$px;
+    background-color: rgb(18,20,22);
+}
+
+/*日志*/
+
+QTableView[LogTable=true] {
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(255, 255, 255);
+    background-color: rgba(18, 20, 22, 1);
+    alternate-background-color: rgba(25, 27, 30, 1);
+    outline: none;
+    border: @1$px solid rgba(0, 0, 0, 1);
+}
+
+QTableView[LogTable=true]::item:hover,
+QTableView[LogTable=true]::item:selected {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+}
+
+QTableView[LogTable=true]::item {
+    height: @24$px;
+    outline: 0px;
+    border: 0px;
+    padding-left: @10$px;
+}
+
+/*导出Mapping数据弹窗*/
+QLineEdit[MappingDataLineEdit=true]:read-only {
+    border: @1$px solid transparent;
+    background-color: rgba(53, 56, 59, 1);
+    border: @1$px solid rgba(75, 78, 82, 1);
+}
+
+QFrame[CErrorTipLabel=true] {
+    background-color: rgba(255, 77, 79,0.12);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgb(128,51,52);
+}
+
+QLabel[DeviceNodeFrameDeviceName=true] {
+    font: bold @14$px "Microsoft Yahei";
+}
+
+QLabel[DeviceNodeFrameUsedState=true] {
+    font: @14$px "Microsoft Yahei";
+    color:rgb(58,195,94);
+}
+
+QLabel[DeviceNodeFrameUsedState=false] {
+    font: bold @14$px "Microsoft Yahei";
+}
+
+QFrame[ScreenNodeFrame=true] {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: rgb(25, 27, 30);
+}
+
+QFrame[ScreenNodeFrame=true][selected=true] {
+    background-color: rgb(78, 82, 88);
+}
+
+QFrame[ScreenNodeFrame=true][selected=true]:hover {
+    background-color: rgb(78, 82, 88);
+}
+
+QFrame[ScreenNodeFrame=true]:hover {
+    background-color: rgb(58, 62, 68);
+}
+
+QFrame[ScreenOpBarFTBGroup=true] {
+    background-color: rgb(45, 47, 50);
+    border-radius: @4$px;
+    border: none;
+}
+
+QDoubleSpinBox[ScreenOpBarDuration=true] {
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(232, 236, 242);
+    background-color: rgb(45, 47, 50);
+    border: 1px solid rgb(75, 78, 82);
+    border-radius: @2$px;
+    padding: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+QPushButton[FlieSelectButton=true] {
+    background-color: rgba(53, 55, 59, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(75, 78, 82, 1);
+    text-align: left;
+    color: #8D9095;
+}
+
+QPushButton[FlieSelectButton=true]:hover {
+    background-color: rgba(75, 78, 82, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(100, 104, 109, 1);
+    text-align: left;
+    color: #8D9095;
+}
+
+QPushButton[FlieSelectButton=true]:pressed {
+    background-color: rgba(48, 50, 54, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(61, 139, 255, 1);
+    text-align: left;
+    color: #8D9095;
+}
+
+QPushButton[FlieSelectButton=false] {
+    background-color: rgba(53, 55, 59, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(75, 78, 82, 1);
+    text-align: left;
+    color: #8D9095;
+}
+
+QPushButton[FlieSelectButton=false]:hover {
+    background-color: rgba(75, 78, 82, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(100, 104, 109, 1);
+    text-align: left;
+    color: #8D9095;
+}
+
+QPushButton[FlieSelectButton=false]:pressed {
+    background-color: rgba(48, 50, 54, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(61, 139, 255, 1);
+    text-align: left;
+    color: #8D9095;
+}
+
+QPushButton[FlieSelectButtonError=true] {
+    background-color: rgba(53, 55, 59, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(255, 77, 79, 1);
+    text-align: left;
+    color: rgba(232, 236, 242, 1)
+}
+
+QPushButton[FlieSelectButtonError=true]:hover {
+    background-color: rgba(75, 78, 82, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(100, 104, 109, 1);
+    text-align: left;
+    color: rgba(232, 236, 242, 1)
+}
+
+QPushButton[FlieSelectButtonError=true]:pressed {
+    background-color: rgba(48, 50, 54, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(61, 139, 255, 1);
+    text-align: left;
+    color: rgba(232, 236, 242, 1)
+}
+
+QPushButton[FlieSelectButtonError=true]:disabled {
+    background-color: rgba(48, 50, 54, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(62, 64, 68, 1);
+    text-align: left;
+    color: rgba(100, 104, 109, 1)
+}
+
+QPushButton[FlieSelectButtonError=false] {
+    background-color: rgba(53, 55, 59, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(75, 78, 82, 1);
+    text-align: left;
+    color: rgba(232, 236, 242, 1)
+}
+
+QPushButton[FlieSelectButtonError=false]:hover {
+    background-color: rgba(75, 78, 82, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(100, 104, 109, 1);
+    text-align: left;
+    color: rgba(232, 236, 242, 1)
+}
+
+QPushButton[FlieSelectButtonError=false]:pressed {
+    background-color: rgba(48, 50, 54, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(61, 139, 255, 1);
+    text-align: left;
+    color: rgba(232, 236, 242, 1)
+}
+QPushButton[FlieSelectButtonError=false]:disabled {
+    background-color: rgba(48, 50, 54, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(62, 64, 68, 1);
+    text-align: left;
+    color: rgba(100, 104, 109, 1)
+}
+QLabel[AttributeName=true] {
+    color: rgba(170, 174, 179, 1);
+    font: Normal @12$px "Microsoft Yahei";
+    border: 0px;
+    background-color: transparent;
+}
+
+QLabel[AttributeName = true]:disabled {
+    color: rgba(170, 174, 179, 0.4);
+    font: normal @12$px "Microsoft Yahei";
+    border: 0px;
+    background-color: transparent;
+}
+
+QLabel[PropertyName=true] {
+    color: rgba(204, 208, 215, 1);
+    font: Normal @12$px "Microsoft Yahei";
+    border: 0px;
+    background-color: transparent;
+}
+
+QPushButton[StateWidgetButton=true]:disabled {
+    background-color: rgba(53, 55, 59, 1);
+    border: none;
+    text-align: right;
+    padding-right: @8$px;
+    color: rgba(232, 236, 242, 1);
+}
+
+QPushButton[SettingLeftBtn=true]{
+    font: normal @12$px "Microsoft Yahei";
+    text-align: left;
+    color: rgb(255, 255, 255);
+    background-color: rgba(31, 33, 36, 1);
+    border-radius: @4$px;
+    border: none;
+}
+
+QPushButton[SettingLeftBtn=true]:hover {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: left;
+    background-color: rgb(100, 104, 109);
+    border-radius: @4$px;
+    padding: 0px;
+}
+
+QPushButton[SettingLeftBtn=true]:checked,
+QToolButton[SettingLeftBtn=true]:checked {
+    color: rgb(255, 255, 255);
+    text-align: left;
+    background-color: rgba(75, 78, 82, 1);
+    border: none;
+}
+QPushButton[SettingLeftBtn=true]:disabled {
+    font: 600 @12$px "Microsoft Yahei";
+    color: rgb(255, 255, 255);
+    text-align: left;
+    background-color: rgba(75, 78, 82, 1);
+    border: none;
+}
+
+QPushButton[QueryTimeBtn=true] {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    color: rgba(170, 174, 179, 1);
+    background-color: rgba(53, 55, 59, 1);
+    border-radius: @4$px;
+    border: none;
+}
+
+QPushButton[QueryTimeBtn=true]:hover {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(75, 78, 82, 1);
+    border-radius: @4$px;
+    padding: 0px;
+}
+
+QPushButton[QueryTimeBtn=true]:pressed,
+QPushButton[QueryTimeBtn=true]:checked
+{
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    background-color: rgba(100, 104, 109, 1);
+}
+
+/*自定义滑动条*/
+QScrollBar[SuspendedScrollBar=true] {
+    border: none;
+    background: transparent; /* rgba(0,0,0,0%)*/
+}
+
+QScrollBar[SuspendedScrollBar=true]::handle:hover 
+{
+    background: rgb(100, 104, 109);
+}
+
+QScrollBar[SuspendedScrollBar=true]::handle:pressed 
+{
+    background: rgb(141, 145, 149);
+}
+
+QScrollBar[SuspendedScrollBar=true]:vertical 
+{
+    width: @6$px;
+    background: transparent; /* rgba(0,0,0,0%)*/
+    margin: 0px,0px,0px,0px;
+    padding-right: @3$px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+QScrollBar[SuspendedScrollBar=true]:horizontal 
+{
+    height: @6$px;
+    background: transparent; /* rgba(0,0,0,0%)*/
+    border-radius: @4$px;
+    margin: 0px,0px,0px,0px;
+    padding-right: @3$px;
+    padding-top: 0px;
+    padding-bottom: @3$px;
+}
+
+QScrollBar[SuspendedScrollBar=true]::handle:horizontal {
+    border-radius: @4$px;
+    background: rgb(75, 78, 82);
+    min-width: @20$px;
+    height: @6$px;
+}
+
+QScrollBar[SuspendedScrollBar=true]::handle:horizontal:hover {
+    border-radius: @4$px;
+    background: rgb(75, 78, 82);
+    min-width: @20$px;
+    height: @6$px;
+}
+
+QScrollBar[SuspendedScrollBar=true]::handle:vertical {
+    border-radius: @4$px;
+    background: rgb(75, 78, 82);
+    min-height: @20$px;
+    width: @6$px;
+}
+
+QScrollBar[SuspendedScrollBar=true]::handle:vertical:hover {
+    border-radius: @4$px;
+    background: rgb(75, 78, 82);
+    min-height: @20$px;
+    width: @6$px;
+}
+
+QScrollBar[SuspendedScrollBar=true]::add-line:vertical {
+    height: 0px;
+    width: 0px;
+    subcontrol-position: bottom;
+}
+
+QScrollBar[SuspendedScrollBar=true]::sub-line:vertical {
+height: 0px;
+width: 0px;
+subcontrol-position: top;
+}
+
+QScrollBar[SuspendedScrollBar=true]::add-line:vertical:hover {
+height: 0px;
+width: 0px;
+subcontrol-position: bottom;
+}
+
+QScrollBar[SuspendedScrollBar=true]::sub-line:vertical:hover {
+height: 0px;
+width: 0px;
+subcontrol-position: top;
+}
+
+QScrollBar[SuspendedScrollBar=true]::sub-page:vertical {
+background: none;
+}
+
+QScrollBar[SuspendedScrollBar=true]::add-page:vertical {
+background: none;
+}
+
+
+/*沉浸式屏幕编辑弹窗*/
+QPushButton[ChangeSetpBtn=true] {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    color: rgba(61, 139, 255, 1);
+    padding: 0;
+    text-align: left;
+}
+
+QPushButton[ChangeSetpBtn=true]:hover:!pressed,
+QPushButton[ChangeSetpBtn=true]:pressed {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    color: rgba(96, 160, 255, 1);
+    padding: 0;
+    text-align: left;
+}
+
+QLabel[ParameterSettingLabel=true] {
+    background-color: transparent;
+    font: bold @12$px "Microsoft Yahei";
+    color: rgb(232, 236, 243);
+    text-align: left;
+}
+
+QLabel[ParameterSettingLabel=false] {
+    background-color: transparent;
+    font: 600 @12$px "Microsoft Yahei";
+    color: rgb(232, 236, 243);
+    text-align: left;
+}
+
+QLabel[EdgeLength=true] {
+    background-color: transparent;
+    font: 400 @12$px "Microsoft Yahei";
+    color: rgba(204, 208, 215, 1);
+    text-align: left;
+}
+
+QDoubleSpinBox[ParameterSettingDoubleSpinBox=true] {
+    background-color: rgba(18, 20, 22, 1);
+    border-radius: 0;
+    border: @1$px solid rgba(48, 50, 54, 1);
+}
+
+QFrame[BackgroundFrame=true] {
+    background-color: rgba(25, 27, 30, 1);
+    border: @1$px solid rgba(0, 0, 0, 1);
+}
+
+QPushButton[TipButton=true] {
+    background-color: transparent;
+    border: none; 
+    min-width: @14$px; 
+    min-height: @14$px; 
+    image: url(:/dark/images/PresetModelEditDlg/TipBtn/Normal.svg);
+}
+
+QPushButton[TipButton=true]:hover {
+    background-color: transparent;
+    image: url(:/dark/images/PresetModelEditDlg/TipBtn/Hover.svg);
+}
+
+QPushButton[TipButton=true][ErrorTip=true] {
+    background-color: transparent;
+    border: none;
+    min-width: @14$px;
+    min-height: @14$px;
+    image: url(:/dark/images/CommonCtrl/ErrorTip/ErrorTip.svg);
+}
+
+QPushButton[TipButton=true][ErrorTip=true]:hover {
+    background-color: transparent;
+    image: url(:/dark/images/CommonCtrl/ErrorTip/ErrorTip.svg);
+}
+
+QFrame[BottomfaceEditBackgroundFrame=true] {
+    background-color: rgba(36, 38, 41, 1);
+    border-radius: @4$px;
+    border: none;
+}
+QFrame[CButtomEditTipLabel=true] {
+    background-color: rgba(61, 139, 255, 0.08);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(24, 62, 118, 1);
+}
+
+/*----------------TimeLineWnd-------Begin--------------------------------------------------*/
+QLabel[TimeLineWndTopTimeLabel=true] {
+    font: @20$px "Microsoft Yahei";
+    font-weight: 1200;
+    color: rgb(65, 127, 249);
+}
+
+QLabel[TimeLineWndTopTimeFps=true] {
+    font: @12$px "Microsoft Yahei";
+    font-weight: normal;
+    color: rgb(65, 127, 249);
+}
+
+QLabel[TimeLineWndTopClipPos=true] {
+    font: @16$px "Microsoft Yahei";
+    font-weight: normal;
+    color: rgb(120, 124, 126);
+}
+
+QScrollBar[TimeLineWndScrollBar=true]::vertical {
+    width: @12$px;
+    padding-top: @4$px;
+    padding-bottom: @4$px;
+    margin-left: @2$px;
+    margin-right: @2$px;
+    background: transparent;
+}
+
+QScrollBar[TimeLineWndScrollBar=true]::horizontal {
+    height: @12$px;
+    padding-left: @4$px;
+    padding-right: @4$px;
+    margin-top: @2$px;
+    margin-bottom: @2$px;
+    background: transparent;
+}
+
+QScrollBar[TimeLineWndScrollBar=true]::sub-line {
+    height: 0px;
+    width: 0px;
+}
+
+QScrollBar[TimeLineWndScrollBar=true]::add-line {
+    height: 0px;
+    width: 0px;
+}
+
+QScrollBar[TimeLineWndScrollBar=true]::handle {
+    background: rgb(75, 78, 82);
+    border-radius: @3$px;
+}
+
+QScrollBar[TimeLineWndScrollBar=true]::handle:hover {
+    background: rgb(96, 100, 106);
+}
+
+QScrollBar[TimeLineWndScrollBar=true]::handle:pressed {
+    background: rgb(106, 110, 116);
+}
+
+/*----------------TimeLineWnd-------End--------------------------------------------------*/
+
+
+QPushButton[IrregularPrismAssosiationBtn=true] {
+    background-color: transparent; /*背景色*/
+    border-radius: @4$px; /*边界圆滑*/
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(200, 204, 208); /*字体颜色*/
+    text-align: center;
+    vertical-align: miple;
+    padding-left: @6$px;
+    padding-right: @6$px;
+}
+
+QPushButton[IrregularPrismAssosiationBtn=true]:hover:!pressed {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+
+QPushButton[IrregularPrismAssosiationBtn=true]:checked,
+QPushButton[IrregularPrismAssosiationBtn=true]:pressed {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+
+QPushButton[IrregularPrismAssosiationBtn=true]:disabled {
+    background-color: transparent;
+    color: rgb(116, 120, 124);
+}
+
+QLabel[CameraViewShiftLabel=true] {
+    color: rgba(232, 236, 242, 1);
+    font: 600 @12$px "Microsoft Yahei";
+    border: 0px;
+    background-color: transparent;
+    padding : 0px;
+}
+
+QWidget[CameraView=true]
+{
+    background-color:rgba(9,10,11,1);
+}
+
+QWidget[CameraView=false] {
+    background-color: rgba(255,10,11,1);
+}
+
+QPushButton[File=true] {
+    background-color: transparent; /*背景色*/
+    border-radius: @4$px; /*边界圆滑*/
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(200, 204, 208); /*字体颜色*/
+    text-align: center;
+    vertical-align: miple;
+    padding-left: @6$px;
+    padding-right: @6$px;
+}
+
+QPushButton[File=true]:hover:!pressed {
+	background-color: transparent;
+	color: rgb(255, 255, 255);
+}
+
+QPushButton[File=true]:checked,
+QPushButton[File=true]:pressed {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+
+QPushButton[File=true]:disabled {
+    background-color: transparent;
+    color: rgb(116, 120, 124);
+}
+
+QFrame[DoubleBtn = true] {
+    border-radius: @6$px;
+    background-color: rgba(45, 47, 50, 1);
+    border: @1$px solid rgba(53, 55, 59, 1);
+}
+
+QPushButton[DoubleBtn = true] {
+    background-color: rgba(75, 78, 82, 1); /*背景色*/
+    border-radius: @4$px; /*边界圆滑*/
+    font: normal @12$px "Microsoft Yahei";
+    color: rgb(200, 204, 208); /*字体颜色*/
+    text-align: center;
+    vertical-align: miple;
+    padding-left: @6$px;
+    padding-right: @6$px;
+}
+
+QPushButton[DoubleBtn = true]:hover:!pressed {
+	 background-color: rgba(75, 78, 82, 1);
+	  color: rgb(200, 204, 208);
+}
+
+QPushButton[DoubleBtn = true]:checked,
+QPushButton[DoubleBtn = true]:pressed {
+   	 background-color: rgba(75, 78, 82, 1);
+	  color: rgb(200, 204, 208);
+}
+
+QPushButton[DoubleBtn = true]:disabled {
+    background-color: rgba(53, 55, 59, 1);
+    color: rgb(116, 120, 124);
+}
+
+QPushButton[DoubleBtn = false] {
+    background-color: rgba(45, 47, 50, 1); /*背景色*/
+    border-radius: @4$px; /*边界圆滑*/
+    font: normal @12$px "Microsoft Yahei";
+    color: rgba(141, 144, 149, 1); /*字体颜色*/
+    text-align: center;
+    vertical-align: miple;
+    padding-left: @6$px;
+    padding-right: @6$px;
+}
+
+QPushButton[DoubleBtn = false]:hover:!pressed {
+	background-color: rgba(45, 47, 50, 1);
+	color:rgba(141, 144, 149, 1);
+}
+
+QPushButton[DoubleBtn = false]:checked,
+QPushButton[DoubleBtn = false]:pressed {
+    background-color: rgba(45, 47, 50, 1);
+	color:rgba(141, 144, 149, 1);
+}
+
+QPushButton[DoubleBtn = false]:disabled {
+    background-color: rgba(45, 47, 50, 1);
+	color:rgba(141, 144, 149, 1);
+}
+
+QWidget[LayoutMessageBoxSucc=true] {
+    background-color: rgba(58,195,94,0.08);
+    border-radius: @4$px;
+    border: @1$px solid rgba(58, 195, 94, 1);
+}
+
+QWidget[LayoutMessageBoxNormal=true] {
+    background-color: rgba(61, 139, 255, 0.08);
+    border-radius: @4$px;
+    border: @1$px solid #183E76;
+}
+
+QWidget[LayoutMessageBoxFail=true] {
+    background-color: rgba(255, 77, 79, 0.08);
+    border-radius: @4$px;
+    border: @1$px solid rgba(98, 46, 47, 1);
+}
+
+QWidget[LayoutMessageBoxWarning=true] {
+    background-color: rgba(255, 151, 77, 0.08);
+    border-radius: @4$px;
+    border: @1$px solid rgba(89, 61, 40, 1);
+}
+
+QLabel[LayoutMessageTxtSucc=true] {
+    color: rgba(58, 195, 94, 1);
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+}
+
+QLabel[LayoutMessageTxtNormal=true] {
+    color: rgba(127, 179, 255, 1);
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+}
+
+QLabel[LayoutMessageTxtFail=true] {
+    color: rgba(255, 77, 79, 1);
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+}
+
+QLabel[LayoutMessageTxtWarning=true] {
+    color: rgba(255, 151, 77, 1);
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+}
+
+QLabel[LayoutMessageIcon=true] {
+    background-color: transparent;
+}
+
+QFrame[GenerateSliceTip=true] {
+    background-color: rgba(61, 139, 255, 0.08);
+    border: @1$px solid rgba(24, 62, 118, 1);
+}
+
+QLabel[GenerateSliceTip=true] {
+    background-color: transparent;
+    color: rgba(127, 179, 255, 1);
+    border: none;
+}
+
+QRadioButton[GenerateSliceBtn=true] {
+    font: normal @12$px "Microsoft Yahei";
+    color: rgba(204, 208, 215, 1);
+}
+
+QRadioButton[GenerateSliceBtn=true]:disabled {
+	color: rgb(116, 118, 124);
+}
+
+QRadioButton[GenerateSliceBtn=true]::indicator {
+	width: @16$px;
+	height: @16$px;
+	image: url(:/dark/images/RadioButton/Unchecked/Normal.svg);
+}
+
+QRadioButton[GenerateSliceBtn=true]::indicator:disabled {
+	image: url(:/dark/images/RadioButton/Unchecked/Disable.svg);
+}
+
+QRadioButton[GenerateSliceBtn=true]::indicator:checked {
+	image: url(:/dark/images/RadioButton/Checked/Normal.svg);
+}
+
+QRadioButton[PackProjectBtn=true]::indicator:checked:disabled {
+	image: url(:/dark/images/RadioButton/Checked/Disable.svg);
+	color: rgb(116, 118, 124);
+}
+
+QLabel[OutSliceDesc=true] {
+    color: rgba(141, 144, 149, 1);
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    border: none;
+}
+
+
+QLabel[BtnLineDesc=true] {
+    color: rgba(255, 77, 79, 1);
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    border: none;
+}
+
+QLabel[ErrorLabel=true] {
+    color: rgba(255, 77, 79, 1);
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    border: none;
+}
+
+QLabel[MessageBoxDesc=true] {
+    color: rgba(141, 144, 149, 1);
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    border: none;
+}
+QFrame[BlackFrame=true] {
+    background-color: rgba(31, 33, 36, 1); /*背景色*/
+}
+
+QLabel[MessageBoxDesc=false] {
+    color: rgba(232, 236, 242, 1);
+    font: normal @14$px "Microsoft Yahei";
+    background-color: transparent;
+    border: none;
+}
+
+QLabel[MessageBoxSaveDesc=true] {
+    color: rgba(100, 104, 109, 1);
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    border: none;
+}
+
+
+QFrame[SliceBottomFrame=true] {
+    background-color: rgba(36, 38, 41, 1);
+    border-top: @1$px solid rgb(0, 0, 0);
+}
+
+QLabel[SliceSelect=true] {
+    color: rgba(61, 139, 255, 1);
+}
+
+QFrame[MeshSliceDlgContainer=true] {
+    background-color: rgba(25, 27, 30, 1);
+    border: @1$px solid rgba(48, 50, 54, 1);
+    border-radius: @8$px;
+}
+
+QFrame[MeshSliceDlgContainer=false] {
+    background-color: rgba(25, 27, 30, 1);
+    border: @1$px solid rgba(61, 139, 255, 1);
+    border-radius: @8$px;
+    padding: @1$px;
+}
+
+QFrame[MeshSliceDlgTopTips=true] {
+    background-color: rgba(38, 46, 58, 1);
+    border: @1$px solid rgba(24, 62, 118, 1);
+    border-radius: @4$px;
+    padding: @1$px;
+}
+
+QRadioButton[MeshSliceRBtn=true] {
+    font: bold @12$px "Microsoft Yahei";
+}
+
+QLabel[ModuleLabel=true] {
+    background-color: rgba(53, 55, 59, 1);
+    border: @1$px solid rgba(75, 78, 82, 1);
+    border-radius: @4$px;
+    color: rgba(232, 236, 242, 1);
+    padding-left: @8$px;
+}
+QLabel[ModuleLabel=false] {
+    background-color: rgba(45, 47, 50, 1);
+    border: @1$px solid rgba(62, 64, 68, 1);
+    border-radius: @4$px;
+    color: rgba(100, 104, 109, 1);
+    padding-left: @8$px;
+}
+
+QFrame[TransparentOverlayFrame=true] {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+}
+QLabel[StateLabel=true] {
+    background-color: transparent;
+    font: bold @12$px "Microsoft Yahei";
+    color: rgba(204, 208, 215, 1);
+    text-align: left;
+}
+
+QProgressBar[ModuleInference=true] {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: rgba(25, 27, 30, 1);
+    border-radius: @3$px;
+    border: @1$px solid rgba(0, 0, 0, 1);
+}
+
+QProgressBar[ModuleInference=true]::chunk {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #3D8BFF, stop:1 #25BBEA );
+    border-radius: @3$px;
+    border: none;
+}
+
+QPushButton[SvgImageTextButton="Default"] {
+    background-color: rgba(53, 55, 59, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(75, 78, 82, 1);
+    text-align: center;
+    color: rgba(141, 144, 149, 1);
+}
+
+QPushButton[SvgImageTextButton="Default"]:hover {
+    background-color: rgba(75, 78, 82, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(100, 104, 109, 1);
+    text-align: center;
+    color: rgba(141, 144, 149, 1);
+}
+
+QPushButton[SvgImageTextButton="Default"]:pressed {
+    background-color: rgba(48, 50, 54, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(61, 139, 255, 1);
+    text-align: center;
+    color: rgba(141, 144, 149, 1);
+}
+
+QPushButton[SvgImageTextButton="Normal"] {
+    background-color: rgba(53, 55, 59, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(75, 78, 82, 1);
+    text-align: center;
+    color: rgba(232, 236, 242, 1);
+}
+
+QPushButton[SvgImageTextButton="Normal"]:hover {
+    background-color: rgba(75, 78, 82, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(100, 104, 109, 1);
+    text-align: center;
+    color: rgba(232, 236, 242, 1);
+}
+
+QPushButton[SvgImageTextButton="Normal"]:pressed {
+    background-color: rgba(48, 50, 54, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(61, 139, 255, 1);
+    text-align: center;
+    color: rgba(232, 236, 242, 1);
+}
+
+/* 相机录制面板路径按钮专用：禁用态字体色（不改全局 SvgImageTextButton） */
+QWidget[CameraRecordPathBtn=true] QPushButton[SvgImageTextButton="Normal"]:disabled {
+    color: rgb(116, 120, 124);
+}
+
+QPushButton[SvgImageTextButton="Wrong"] {
+    background-color: rgba(53, 55, 59, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(255, 77, 79, 1);
+    text-align: center;
+    color: rgba(232, 236, 242, 1);
+}
+
+QPushButton[SvgImageTextButton="Wrong"]:hover {
+    background-color: rgba(75, 78, 82, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(255, 77, 79, 1);
+    text-align: center;
+    color: rgba(232, 236, 242, 1);
+}
+
+QPushButton[SvgImageTextButton="Wrong"]:pressed {
+    background-color: rgba(48, 50, 54, 1);
+    border: solid;
+    border-width: @1$px;
+    border-radius: @4$px;
+    border-color: rgba(255, 77, 79, 1);
+    text-align: center;
+    color: rgba(232, 236, 242, 1);
+}
+
+QPushButton[SvgImageTextAlign="Left"],
+QPushButton[SvgImageTextAlign="Left"]:hover,
+QPushButton[SvgImageTextAlign="Left"]:pressed {
+    text-align: left;
+    padding-left: @8$px;
+}
+
+QPushButton[SvgImageTextAlign="Right"],
+QPushButton[SvgImageTextAlign="Right"]:hover,
+QPushButton[SvgImageTextAlign="Right"]:pressed {
+    text-align: right;
+    padding-right: @8$px;
+}
+
+
+
+/*QSlider--------------------------------------------------------------------*/
+QSlider[TimeLineZoom=true] {
+    background-color: none;
+    border: none;
+    padding-left: @3$px;
+    padding-right: @3$px;
+}
+
+QSlider[TimeLineZoom=true]::groove:horizontal {
+    border: none;
+    height: @2$px;
+    padding-left: -@3$px;
+    padding-right: -@3$px;
+}
+
+QSlider[TimeLineZoom=true]::groove:vertical {
+    border: none;
+    width: @2$px;
+    padding-top: -@3$px;
+    padding-bottom: -@3$px;
+}
+
+QSlider[TimeLineZoom=true]::handle:horizontal {
+    background: transparent;
+    border: none;
+    width: @7$px;
+    margin: -@4$px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    border-radius: @3$px;
+    image: url(:/dark/images/TimeLineWnd/Handle/Normal.svg);
+}
+
+QSlider[TimeLineZoom=true]::handle:vertical {
+    background: rgb(217, 217, 217);
+    border: none;
+    width: height;
+    margin: 0 -@6$px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    border-radius: @3$px;
+}
+
+QSlider[TimeLineZoom=true]::add-page:horizontal {
+    background: rgba(42, 46, 52, 1);
+    border-radius: @2$px;
+}
+
+QSlider[TimeLineZoom=true]::sub-page:horizontal {
+    background: rgb(217, 217, 217);
+    border-radius: @2$px;
+}
+
+QLabel[ModelIomportLabel=true] {
+    color: rgba(204, 208, 215, 1);
+    font: Normal @12$px "Microsoft Yahei";
+    border: 0px;
+    background-color: transparent;
+}
+
+QLabel[ModelIomportTipLabel=true] {
+    color: rgba(141, 144, 149, 1);
+    font: Normal @12$px "Microsoft Yahei";
+    border: 0px;
+    background-color: transparent;
+    text-align: left;
+}
+
+QLabel[pMultiSelTips=true] {
+    background-color: transparent;
+    color: rgba(127, 179, 255, 1);
+}
+
+QLabel[VRTitleNameTips = "Unconnected"] {
+    color: rgba(100, 104, 109, 1);
+    font: Normal @10$px "Microsoft Yahei";
+}
+
+QLabel[VRTitleNameTips = "Connecting"] {
+    color: rgba(61, 139, 255, 1);
+    font: Normal @10$px "Microsoft Yahei";
+}
+
+QLabel[VRTitleNameTips = "Connected"] {
+    color: rgba(58, 195, 94, 1);
+    font: Normal @10$px "Microsoft Yahei";
+}
+
+QCheckBox[AttributeName = true] {
+    font: Normal @12$px "Microsoft Yahei";
+    color: rgba(170, 174, 179, 1);
+}
+QCheckBox[AttributeName = true]:disabled {
+    font: Normal @12$px "Microsoft Yahei";
+    color: rgba(170, 174, 179, 0.4);
+}
+
+/* 采集卡------------------------------------------------------------------------------------------*/
+QFrame[CaptureView=true] {
+    background-color: rgba(31, 33, 36, 1);
+}
+
+QFrame[VideoCaptureChecked=false] {
+    background-color: transparent;
+    /*border: @2$px solid rgba(66, 70, 76, 1);
+    border-radius: @8$px;*/
+}
+
+QFrame[VideoCaptureChecked=true] {
+    background-color: transparent;
+    /*border: @2$px solid rgba(65, 127, 249, 1);
+    border-radius: @8$px;*/
+}
+
+QLabel[VideoCaptureDeviceName=true] {
+    color: rgba(232, 237, 242, 1);
+    font-weight: 600;
+    font: bold @12$px "Microsoft Yahei";
+}
+
+QLabel[VideoCaptureUseState=false] {
+    color: rgba(141, 145, 149, 1);
+}
+
+QLabel[VideoCaptureUseState=true] {
+    color: rgba(16, 160, 82, 1);
+}
+
+QLabel[VideoCaptureBkImage=true] {
+    border-radius: @6$px;
+    border: @2$px solid rgba(61, 139, 255, 1);
+    background-color: rgba(75, 78, 82, 1);
+}
+
+QLabel[VideoCaptureBkImage=false] {
+    border-radius: @6$px;
+    border: @1$px solid rgba(0, 0, 0, 1);
+    background-color: rgba(75, 78, 82, 1);
+}
+
+QLabel[AudioCaptureDevide=true] {
+    background-color: rgb(42, 46, 50);
+}
+
+QPushButton[AudioCaptureChecked=true],
+QPushButton[AudioCapture=true] {
+    image: url(:/dark/images/ResourceWnd/Capture/AudioCapture_Off.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: @1$px solid rgba(0, 0, 0, 1);
+    background-color: rgba(25, 27, 30, 1);
+}
+
+QPushButton[AudioCaptureChecked=true]:hover,
+QPushButton[AudioCapture=true]:hover,
+QPushButton[AudioCaptureAudition=true]:hover {
+    border: @2$px solid rgba(35, 79, 145, 1);
+    background-color: rgba(25, 27, 30, 1);
+}
+
+QPushButton[AudioCapture=true]:checked {
+    /*image: url(:/dark/images/ResourceWnd/Capture/AudioCapture_On.svg);*/
+    border: @2$px solid rgba(61, 139, 255, 1);
+}
+
+QPushButton[AudioCaptureChecked=true]:checked {
+    image: url(:/dark/images/ResourceWnd/Capture/AudioCapture_On.png);
+    border: @2$px solid rgba(61, 139, 255, 1);
+}
+
+QPushButton[AudioCaptureAudition=true] {
+    image: url(:/dark/images/ResourceWnd/Capture/AudioCaptureAudition_Off.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: @1$px solid rgba(0, 0, 0, 1);
+    background-color: rgba(25, 27, 30, 1);
+}
+
+QPushButton[AudioCaptureAudition=true]:checked {
+    image: url(:/dark/images/ResourceWnd/Capture/AudioCaptureAudition_On.png);
+    border: @2$px solid rgba(61, 139, 255, 1);
+}
+
+/*流媒体------------------------------------------------------------------------------------------*/
+QLabel[WebMediaView] {
+    background-color: rgba(18, 20, 22, 1);
+    color: rgba(232, 237, 242, 1);
+    font: normal @14$px "Microsoft Yahei";
+}
+
+QLabel[WebMediaViewDefault] {
+    color: rgba(232, 237, 242, 1);
+    background-color: rgba(18, 20, 22, 1);
+}
+
+QLabel[NoNdiDevBk=CH] {
+    border-image: url(:/dark/images/Ndi/Backgroup_Image_CH.png);
+}
+
+QLabel[NoNdiDevBk=EN] {
+    border-image: url(:/dark/images/Ndi/Backgroup_Image_EN.png);
+}
+
+QLabel[NoNdiDevBk=TR] {
+    border-image: url(:/dark/images/Ndi/Backgroup_Image_TR.png);
+}
+
+QLabel[NDIDialogNodeResolution=true] {
+    color: rgb(141,145,149);
+}
+
+QLabel[NDIDialogNodeState=false] {
+    color: rgb(141,145,149);
+}
+
+QLabel[NDIDialogNodeState=true] {
+    color: rgba(16, 160, 82, 1);
+}
+
+QPushButton[GrayBtn=true] {
+    background-color: rgba(75, 78, 82, 1);
+    color: rgba(232, 237, 242, 1); /*字体颜色*/
+    border: @1$px solid rgba(18, 20, 22, 1);
+    border-radius: @4$px;
+}
+
+QPushButton[GrayBtn=true]:hover:!pressed {
+    background-color: rgba(100, 104, 109, 1);
+}
+
+QPushButton[GrayBtn=true]:checked,
+QPushButton[GrayBtn=true]:pressed {
+    background-color: rgba(131, 136, 141, 1);
+}
+
+QPushButton[GrayBtn=true]:disabled {
+    background-color: rgba(48, 50, 54, 1);
+    color: rgb(100, 104, 109);
+}
+
+/*resourcewnd*/
+QPushButton[ResWndFilterBtn=true] {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    color: rgba(204, 209, 215, 1);
+    background-color: rgba(31, 33, 36, 1);
+    border-radius: @4$px;
+    border: none;
+}
+
+QPushButton[ResWndFilterBtn=true]:hover {
+    background-color: rgba(55, 57, 61, 1);
+}
+
+QPushButton[ResWndFilterBtn=true]:pressed {
+    background-color: rgba(75, 78, 82, 1);
+}
+
+QPushButton[ResWndFilterBtn=true]::menu-indicator:pressed {
+    image: url(:/dark/images/ResourceWnd/DataBase/Menu/Indicator/Up.svg);
+    subcontrol-position: right center;
+    subcontrol-origin: padding;
+    right: 0px;
+    width: @16$px;
+    height: @16$px;
+}
+
+QPushButton[ResWndFilterBtn=true]::menu-indicator {
+    image: url(:/dark/images/ResourceWnd/DataBase/Menu/Indicator/Down.svg);
+    subcontrol-position: right center;
+    subcontrol-origin: padding;
+    right: 0px;
+    width: @16$px;
+    height: @16$px;
+}
+
+QLineEdit[SearchEdit=true] {
+    border: @1$px solid rgba(0, 0, 0, 1);
+    border-radius: @4$px;
+    background-color: rgba(18, 20, 22, 1);
+    font: @12$px "Microsoft Yahei";
+}
+
+QLineEdit[SearchEdit=true]:hover {
+    border-color: rgb(0,0,0);
+}
+
+QLineEdit[SearchEdit=true]:focus {
+    border-color: rgba(61, 139, 255, 1);
+    background-color: rgba(18, 20, 22, 1);
+}
+
+QLineEdit[SearchEdit=true]:hover {
+    background-color: rgba(18, 20, 22, 1);
+}
+
+QWidget[PropertyWndBackWidgetground=true] {
+    border: none;
+    background-color: rgba(39, 41, 44, 1);
+}
+
+QWidget[PtyWithBottomLine=true] {
+    background-color: transparent;
+    border-bottom: @1$px solid rgba(18,20,22,1);
+}
+
+QWidget[PtyWithBottomLine=false] {
+    border: none;
+    background-color: transparent;
+}
+
+/*resproperty*/
+QLabel[LotteryTypeNode=false] {
+    background-color: rgba(75, 78, 82, 1);
+    border: @1$px solid rgba(0, 0, 0, 1);
+    border-radius: @4$px;
+}
+
+QLabel[LotteryTypeNode=true] {
+    border: @2$px solid rgba(61, 139, 255, 1);
+    border-radius: @4$px;
+}
+
+QLabel[LotteryTypeNodeTitle=false] {
+    font: 600 @12$px "Microsoft Yahei";
+    color: rgba(232, 237, 242, 1);
+}
+
+QLabel[LotteryTypeNodeTitle=true] {
+    font: 600 @12$px "Microsoft Yahei";
+    color: rgba(232, 237, 242, 1);
+}
+
+QFrame[TestChartFrameBackClr = true] {
+    background-color: #27292C;
+}
+/*幻彩字---------------------------------------------------------------------------------*/
+QLineEdit[ColorTextTip=true] {
+    padding-left: 0px;
+    border: none;
+    background-color: transparent;
+    font: Normal @12$px "Microsoft Yahei";
+    color: rgb(160, 164, 170);
+    margin-left: -@2$px;
+}
+
+QLineEdit[ColorTextTip=true]:disabled {
+    color: rgb(120, 124, 126);
+}
+
+QLabel[ColorTextTip=true] {
+    font: @12$px "Microsoft Yahei";
+    color: rgb(160, 164, 170);
+    text-align: center;
+}
+
+QLabel[ColorTextTip=true]:disabled {
+    font: @12$px "Microsoft Yahei";
+    color: rgb(120, 124, 126);
+    text-align: center;
+}
+
+QWidget[FloatContainer=true][ColorTextBtn=true] {
+    border: @1$px solid rgb(0, 0, 0);
+}
+
+QPushButton[ColorPickerHelperBtn=true] {
+    border-radius: @5$px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+QPushButton[ColorPickerHelperBtn=true]:checked {
+    background-color: rgba(65, 127, 249, 1);
+}
+
+QPushButton[ColorPickerHelperBtn=true]:hover {
+    background-color: rgba(65, 127, 249, 0.5);
+}
+
+QPushButton[ColorTextBtn=true] {
+    border-radius: @5$px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    background-position: center;
+}
+
+QPushButton[ColorTextBtn=true]:checked {
+    background-color: rgba(255, 139, 24, 1);
+}
+
+QPushButton[ColorTextBtn=true]:hover {
+    background-color: rgba(255, 139, 24, 0.7);
+}
+
+QPushButton[FillTextureBtn=true] {
+    border-radius: @5$px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    background-position: center;
+}
+
+QPushButton[FillTextureBtn=true]:checked {
+    border: @2$px solid rgba(255, 255, 255, 1);
+    background-position: center;
+}
+
+QPushButton[FillTextureBtn=true]:hover {
+    border: @2$px solid rgba(147, 148, 149, 1);
+    background-position: center;
+}
+
+QFrame[ResProertySplitor=true] {
+    border-top: @1$px solid rgba(18,20,22,1);
+    background-color: transparent;
+}
+
+/*-----------------subtitle--------------------*/
+QTableView[SubtitleTable=true] {
+    background-color: rgb(0, 0, 0);
+    gridline-color: rgba(31, 33, 36, 1);
+    outline: 0px;
+    border: @1$px solid rgba(55, 57, 61, 1);
+    color: rgba(232, 237, 242, 1);
+}
+
+/* 左上角的空白区域样式 */
+QTableView[SubtitleTable=true] QTableCornerButton::section {
+    color: white;
+    background-color: rgb(39, 41, 44);
+    border: 0px;
+    border-right: @1$px solid rgba(55, 57, 61, 1);
+    border-bottom: @1$px solid rgba(55, 57, 61, 1);
+}
+
+QHeaderView[SubtitleTableResourceH=true] {
+    background-color: rgb(39, 41, 44);
+    border-bottom: @1$px solid rgb(42, 46, 50);
+    outline: none;
+}
+
+QHeaderView[SubtitleTableResourceH=true]::section {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    color: rgb(200, 204, 208);
+    border: none;
+    padding-left: 0px;
+    border-left: none;
+    border-right: @1$px solid rgb(42, 46, 50);
+    outline: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+QHeaderView[SubtitleTableResourceV=true] {
+    background-color: rgb(39, 41, 44);
+    border-right: @1$px solid rgb(42, 46, 50);
+    outline: none;
+    border-bottom: 0px;
+}
+
+QHeaderView[SubtitleTableResourceV=true]::section {
+    font: normal @12$px "Microsoft Yahei";
+    background-color: transparent;
+    color: rgb(200, 204, 208);
+    border: none;
+    padding-left: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: none;
+    border-bottom: @1$px solid rgb(42, 46, 50);
+    outline: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+QFrame[SubtitleImportFrame=true] {
+    border-radius: @4$px;
+    background-color: rgb(48, 50, 54);
+    border: @1$px dashed rgb(75, 78, 82);
+}
+
+QPushButton[SubtitleImportBtn=true] {
+    background-color: rgba(61, 139, 255, 1);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: @16$px;
+}
+
+QPushButton[SubtitleImportBtn=true]:hover {
+    background-color: rgba(61, 139, 255, 1);
+}
+
+QPushButton[SubtitleImportBtn=true]:pressed {
+    background-color: rgba(61, 139, 255, 1);
+}
+
+QLabel[SubtitleImportTips=true] {
+    color: rgb(204, 209, 215);
+}
+
+QLabel[SubtitleImportFormatTips=true] {
+    color: rgb(141, 145, 149);
+}
+
+QFrame[SubtitleTableRightTopWgt=true] {
+    background-color: rgb(31, 33, 36);
+}
+
+QFrame[SubtitleTableRightTopWgtBorder] {
+    border: none;
+    border-left: @1$px solid rgba(55, 57, 61, 1);
+}
+
+QFrame[SubtitleTableLeftBottomWgtBorder] {
+    border: none;
+    border-top: @1$px solid rgba(55, 57, 61, 1);
+}
+
+QFrame[SubtitleTableRightBottomWgtBorder] {
+    border: none;
+    border-top: @1$px solid rgba(55, 57, 61, 1);
+    border-left: @1$px solid rgba(55, 57, 61, 1);
+}
+
+/*软件设计相关窗口------------------------------------------------------------------------------------------------*/
+QFrame[SettingLeft=true] {
+    background-color: rgba(31, 33, 36, 1);
+    border-right: @1$px solid rgb(0, 0, 0);
+    border-bottom-left-radius: @6$px;
+}
+
+QFrame[SettingBottom=true] {
+    background-color: rgba(25, 27, 30, 1);
+    border-bottom-right-radius: @6$px;
+}
+
+QPushButton[SettingLeftBtn=true],
+QToolButton[SettingLeftBtn=true] {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgba(31, 33, 36, 1);
+    border-radius: @4$px;
+    border: none;
+}
+
+QPushButton[SettingLeftBtn=true]:checked,
+QToolButton[SettingLeftBtn=true]:checked {
+    color: rgb(255, 255, 255);
+    background-color: rgba(75, 78, 82, 1);
+}
+
+QRadioButton[SettingRightView=true],
+QLabel[SettingRightView=true],
+QCheckBox[SettingRightView=true] {
+    color: rgb(232, 237, 242);
+}
+
+QRadioButton[SettingRightView=true]:disabled,
+QLabel[SettingRightView=true]:disabled,
+QCheckBox[SettingRightView=true]:disabled {
+    color: rgb(100, 104, 109);
+}
+
+QFrame[SettingRight=true] {
+    background-color: rgba(25, 27, 30, 1);
+    border-bottom-right-radius: @6$px;
+}
+
+QFrame[SettingRightGPU=true] {
+    background-color: rgba(0, 0, 0, 1);
+    border-bottom-right-radius: @6$px;
+}
+
+QLabel[reminderLabel=true] {
+    color: rgb(4,158,109);
+}
+
+QLineEdit[TreeViewRename=true] {
+    font-weight: 400;
+    color: rgba(232, 236, 242, 1);
+    border: @1$px solid rgba(61, 139, 255, 1);
+    background-color: rgba(29, 31, 34, 1);
+}
+
+QPushButton[ShowMessageBtn=true] {
+    background-color: transparent; /*背景色*/
+    border-radius: 0px; /*边界圆滑*/
+    font: normal @12$px "Microsoft Yahei";
+    color: rgba(232, 236, 242, 1); /*字体颜色*/
+    text-align: center;
+    padding: 0px;
+}
+QPushButton[ShowMessageBtn=true]:hover:!pressed {
+    background-color: transparent; /*背景色*/
+}
+
+QPushButton[ShowMessageBtn=true]:checked,
+QPushButton[ShowMessageBtn=true]:pressed {
+    background-color: transparent; /*背景色*/
+}
+
+QPushButton[ShowMessageBtn=true]:disabled {
+    background-color: transparent; /*背景色*/
+}
+
+/*-----------------ImportDialog (multi-file import)--------------------*/
+QLabel[ImportDialogHint=true]{
+    color: rgba(100, 104, 109, 1);
+    background-color: transparent;
+}
+
+QFrame[ImportDialogFileRow=true]{
+    background-color: transparent;
+}
+
+QFrame[ImportDialogFileRow=false] {
+    background-color: rgba(48, 50, 54, 1);
+}
+
+QLabel[ImportDialogFileName=true] {
+    color: rgba(204, 208, 215, 1);
+    background-color: transparent;
+}
+
+QLabel[ImportDialogFileName=false] {
+    color: rgba(204, 208, 215, 1);
+    background-color: rgba(48, 50, 54, 1);
+}
+
+QPushButton[ImportDialogDelete=true] {
+    background-color: transparent;
+}
+
+
+QLabel[ImportDialogError=true] {
+    color: rgba(255, 77, 79, 1);
+    background-color: transparent;
+}
+
+QToolButton[AppOpTypeBtn=true] {
+    background-color: rgba(45, 47, 50, 1);
+    border-radius: @4$px;
+}
+
+QPushButton[PrjSetDialogBtn=true],
+QPushButton[PrjSetDialogBtn=true]:hover,
+QPushButton[PrjSetDialogBtn=true]:checked {
+    font: normal @12$px "Microsoft Yahei";
+    text-align: left;
+    color: rgb(204, 209, 215);
+    background-color: rgba(75, 78, 82, 1);
+    border-radius: @4$px;
+    border: none;
+    padding: 0px;
+    font-weight: 400;
+}
+
+QPushButton[DegreePtn=true] {
+    background-color: transparent;
+    border-radius: @4$px;
+    border: none;
+}
+
+QPushButton[DegreePtn=true]:hover:!pressed {
+    background-color: transparent;
+}
+
+QPushButton[DegreePtn=true]:checked,
+QPushButton[DegreePtn=true]:checked:hover {
+    background-color: rgba(75, 78, 82, 1);
+}
+
+QPushButton[DegreePtn=true]:disabled {
+    background-color: transparent;
+}
+
+QScrollArea[ImportDialog=true] {
+    background-color: rgba(39, 41, 44, 1);
+}
+
+QWidget[ImportDialog=true] {
+    background-color: rgba(39, 41, 44, 1);
+}
+
+QLabel[CInitPrjSettingDialogLab=true] {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QLabel[InitPrjFieldLabel=true] {
+    color: #AAADB3;
+    font-size: 12px;
+}
+
+QLineEdit[InitPrjNameEdit=true] {
+    background: #2A2D32;
+    border: 1px solid #3A3D42;
+    border-radius: 4px;
+    color: #FFFFFF;
+    padding: 0 8px;
+}
+
+QPushButton[InitPrjCreateBtn=true] {
+    background: #0078D7;
+    border: none;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+
+QPushButton[InitPrjCreateBtn=true]:hover {
+    background: #1084E3;
+}
+
+QPushButton[InitPrjOpenFileBtn=true] {
+    background: transparent;
+    border: none;
+    color: #0078D7;
+}
+
+QPushButton[InitPrjOpenFileBtn=true]:hover {
+    background: transparent;
+    color: #0078D7;
+}
+
+QWidget[PrjBottomFrame=true] {
+    background: transparent;
+}
+
+QFrame[RecentPrjItem=true] {
+    background: transparent;
+}
+
+QFrame[RecentPrjThumb=true] {
+    background: #2A2D32;
+    border: 1px solid #3A3D42;
+    border-radius: 4px;
+}
+
+QFrame[RecentPrjThumb=true][RecentPrjThumbHover=true] {
+    border-color: #3D8BFF;
+}
+
+QLabel[RecentPrjThumbImage=true] {
+    background: transparent;
+    border: none;
+}
+
+QLabel[RecentPrjName=true] {
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+QLabel[RecentPrjSub=true] {
+    color: #AAADB3;
+    font-size: 11px;
+}
+
+QScrollArea[InitPrjRecentScroll=true] {
+    background: transparent;
+    border: none;
+}
+
+QFrame[InitPrjNoRecentFrame=true] {
+    background: transparent;
+    border: none;
+}
+
+QLabel[InitPrjNoRecentIcon=true] {
+    background: transparent;
+}
+
+QLabel[InitPrjNoRecentTip=true] {
+    color: #AAADB3;
+    font-size: 12px;
+    background: transparent;
+}
+
+QLabel[AppLoadingAppName=true] {
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    background: transparent;
+}
+
+QLabel[AppLoadingAppIntroduce=true] {
+    color: #333333;
+    font-size: 14px;
+    background: transparent;
+}
+
+QLabel[AppLoadingColorlightName=true] {
+    color: gray;
+    font-size: 12px;
+    background: transparent;
+}
+
+QLabel[AppLoadingColorlightWebSite=true] {
+    color: gray;
+    font-size: 12px;
+    background: transparent;
+}
+
+QLabel[StatusTone="red"] {
+    color: #d63636;
+}
+QLabel[StatusTone="green"] {
+    color: #3ac35e;
+}
+QLabel[StatusTone="inactive"] {
+    color: #808080;
+}
+QLabel[StatusTone="normal"] {
+    color: #e8ecf2;
+}
+
+QLabel[StatusToneBold=true] {
+    font-weight: 600;
+}

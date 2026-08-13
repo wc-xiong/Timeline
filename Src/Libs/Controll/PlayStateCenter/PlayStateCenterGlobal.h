@@ -1,0 +1,9 @@
+#pragma once
+#if defined(PLAYSTATECENTER_LIBRARY)
+#  define PLAYSTATECENTER_EXPORT Q_DECL_EXPORT
+#elif defined(PLAYSTATECENTER_STATIC_LIB)
+#  define PLAYSTATECENTER_EXPORT
+#else
+#  define PLAYSTATECENTER_EXPORT Q_DECL_IMPORT
+#endif
+#include <qglobal.h>

@@ -1,0 +1,9 @@
+#pragma once
+#if defined(VIEWDATAMANAGER_LIBRARY)
+#  define VIEWDATAMANAGER_EXPORT Q_DECL_EXPORT
+#elif defined(VIEWDATAMANAGER_STATIC_LIB)
+#  define VIEWDATAMANAGER_EXPORT
+#else
+#  define VIEWDATAMANAGER_EXPORT Q_DECL_IMPORT
+#endif
+#include <qglobal.h>

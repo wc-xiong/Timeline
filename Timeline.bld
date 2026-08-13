@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Timeline FinalBuilder 工程（已去除全部 SVN 步骤） -->
+<project version="8" encrypted="0">
+	<steps type="0">
+		<step action="Group">
+			<name>编译</name>
+		</step>
+		<step action="Batch File">
+			<CmdFile>%PROJDIR%\Installer\Timeline\scripts\build-release.bat</CmdFile>
+			<indent type="3">1</indent>
+			<name>build-release</name>
+		</step>
+		<step action="Group">
+			<name>Qt运行环境</name>
+		</step>
+		<step action="Batch File">
+			<CmdFile>%PROJDIR%\Installer\Timeline\scripts\PrepareDeploy.bat</CmdFile>
+			<indent type="3">1</indent>
+			<name>windeployqt + 依赖收集</name>
+		</step>
+		<step action="Group">
+			<name>打包</name>
+		</step>
+		<step action="Batch File">
+			<CmdFile>%PROJDIR%\MoveFilesToInstaller.bat</CmdFile>
+			<indent type="3">1</indent>
+			<name>将文件拷贝到安装目录</name>
+		</step>
+		<step action="Batch File">
+			<CmdFile>%PROJDIR%\pack.bat</CmdFile>
+			<indent type="3">1</indent>
+			<name>NSIS 打包</name>
+		</step>
+	</steps>
+</project>

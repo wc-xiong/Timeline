@@ -1,0 +1,8 @@
+# Git LFS for 3rdparty binaries (GitHub 100MB hard limit)
+3rdparty/**/*.dll filter=lfs diff=lfs merge=lfs -text
+3rdparty/**/*.lib filter=lfs diff=lfs merge=lfs -text
+3rdparty/**/*.a filter=lfs diff=lfs merge=lfs -text
+3rdparty/**/*.pdb filter=lfs diff=lfs merge=lfs -text
+3rdparty/**/*.exe filter=lfs diff=lfs merge=lfs -text
+3rdparty/**/*.so filter=lfs diff=lfs merge=lfs -text
+3rdparty/**/*.dylib filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,31 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="47" height="47" rx="9.5" fill="url(#paint0_linear_25061_29927)"/>
+<rect x="0.5" y="0.5" width="47" height="47" rx="9.5" stroke="url(#paint1_linear_25061_29927)"/>
+<g filter="url(#filter0_d_25061_29927)">
+<ellipse cx="24.0001" cy="16.6875" rx="13.4" ry="5.6875" fill="white"/>
+<path d="M10.6001 20.2002C10.6001 20.2002 13.4425 24.5877 24.0001 24.5877C34.5577 24.5877 37.4001 20.2002 37.4001 20.2002V23.6105C37.4001 24.668 37.0629 25.707 36.2293 26.3578C34.5362 27.6796 30.8309 29.7 24.0001 29.7C17.1693 29.7 13.464 27.6796 11.7708 26.3578C10.9373 25.707 10.6001 24.668 10.6001 23.6105V20.2002Z" fill="white"/>
+<circle cx="14.8001" cy="25.5623" r="1.2" fill="#34C2D2"/>
+<path d="M10.6001 27.3997C10.6001 27.3997 13.4425 31.7872 24.0001 31.7872C34.5577 31.7872 37.4001 27.3997 37.4001 27.3997V30.839C37.4001 31.8785 37.0748 32.9013 36.2653 33.5535C34.5889 34.9042 30.8796 36.9995 24.0001 36.9995C17.1206 36.9995 13.4113 34.9042 11.7349 33.5535C10.9254 32.9013 10.6001 31.8785 10.6001 30.839V27.3997Z" fill="white"/>
+<circle cx="14.8001" cy="32.7618" r="1.2" fill="#24B7DD"/>
+</g>
+<defs>
+<filter id="filter0_d_25061_29927" x="4.6001" y="7" width="38.8" height="37.9995" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="3"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_25061_29927"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_25061_29927" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_25061_29927" x1="24" y1="0" x2="24" y2="48" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5DFBA6"/>
+<stop offset="1" stop-color="#00A3FF"/>
+</linearGradient>
+<linearGradient id="paint1_linear_25061_29927" x1="4" y1="2" x2="18" y2="25" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.6"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

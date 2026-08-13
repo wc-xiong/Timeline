@@ -1,0 +1,9 @@
+#pragma once
+#if defined(SELECTCONTROLLER_LIBRARY)
+#  define SELECTCONTROLLER_EXPORT Q_DECL_EXPORT
+#elif defined(SELECTCONTROLLER_STATIC_LIB)
+#  define SELECTCONTROLLER_EXPORT
+#else
+#  define SELECTCONTROLLER_EXPORT Q_DECL_IMPORT
+#endif
+#include <qglobal.h>

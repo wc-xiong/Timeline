@@ -1,0 +1,9 @@
+#pragma once
+#if defined(PLAYERCONTROLLER_LIBRARY)
+#  define PLAYERCONTROLLER_EXPORT Q_DECL_EXPORT
+#elif defined(PLAYERCONTROLLER_STATIC_LIB)
+#  define PLAYERCONTROLLER_EXPORT
+#else
+#  define PLAYERCONTROLLER_EXPORT Q_DECL_IMPORT
+#endif
+#include <qglobal.h>

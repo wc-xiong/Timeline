@@ -1,0 +1,39 @@
+<svg width="40" height="22" viewBox="0 0 40 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="5.71429" height="5.5" fill="#D8D8D8"/>
+<rect y="5.5" width="5.71429" height="5.5" fill="#798065"/>
+<rect y="11" width="5.71429" height="5.5" fill="#F1CF1F"/>
+<rect y="16.5" width="5.71429" height="5.5" fill="#75AEBD"/>
+<rect x="5.71429" width="5.71429" height="5.5" fill="#414141"/>
+<rect x="5.71429" y="5.5" width="5.71429" height="5.5" fill="#D8D8D8"/>
+<rect x="5.71429" y="11" width="5.71429" height="5.5" fill="#B9553B"/>
+<rect x="5.71429" y="16.5" width="5.71429" height="5.5" fill="#D8D8D8"/>
+<rect x="11.4286" width="5.71429" height="5.5" fill="#D8D8D8"/>
+<rect x="11.4286" y="5.5" width="5.71429" height="5.5" fill="#F1CF1F"/>
+<rect x="11.4286" y="11" width="5.71429" height="5.5" fill="white"/>
+<rect x="11.4286" y="16.5" width="5.71429" height="5.5" fill="#CA7C62"/>
+<rect x="17.1429" width="5.71429" height="5.5" fill="#B9553B"/>
+<rect x="17.1429" y="5.5" width="5.71429" height="5.5" fill="#D8D8D8"/>
+<rect x="17.1429" y="11" width="5.71429" height="5.5" fill="#9A92AC"/>
+<rect x="17.1429" y="16.5" width="5.71429" height="5.5" fill="#558B69"/>
+<rect x="28.5714" width="5.71429" height="5.5" fill="#E7B641"/>
+<rect x="28.5714" y="5.5" width="5.71429" height="5.5" fill="#C57884"/>
+<rect x="28.5714" y="11" width="5.71429" height="5.5" fill="#B7BE5D"/>
+<rect x="28.5714" y="16.5" width="5.71429" height="5.5" fill="#F1CF1F"/>
+<rect x="22.8571" width="5.71429" height="5.5" fill="#D8D8D8"/>
+<rect x="22.8571" y="5.5" width="5.71429" height="5.5" fill="#2C2C2C"/>
+<rect x="22.8571" y="11" width="5.71429" height="5.5" fill="#026DA7"/>
+<rect x="22.8571" y="16.5" width="5.71429" height="5.5" fill="#8D92FF"/>
+<rect x="34.2857" width="5.71429" height="5.5" fill="#9A92AC"/>
+<rect x="34.2857" y="5.5" width="5.71429" height="5.5" fill="#4C497F"/>
+<rect x="34.2857" y="11" width="5.71429" height="5.5" fill="#9A92AC"/>
+<rect x="34.2857" y="16.5" width="5.71429" height="5.5" fill="black"/>
+<path d="M0 5.5H40" stroke="black" stroke-width="0.916667"/>
+<path d="M0 11H40" stroke="black" stroke-width="0.916667"/>
+<path d="M0 16.5H40" stroke="black" stroke-width="0.916667"/>
+<path d="M5.71429 0V22" stroke="black" stroke-width="0.916667"/>
+<path d="M11.4286 0V22" stroke="black" stroke-width="0.916667"/>
+<path d="M17.1429 0V22" stroke="black" stroke-width="0.916667"/>
+<path d="M22.8571 0V22" stroke="black" stroke-width="0.916667"/>
+<path d="M28.5714 0V22" stroke="black" stroke-width="0.916667"/>
+<path d="M34.2857 0V22" stroke="black" stroke-width="0.916667"/>
+</svg>

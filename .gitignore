@@ -1,0 +1,40 @@
+# Timeline
+
+## Build / CMake outputs
+/bin/
+/lib/
+/build/
+/Debug/
+/Pack/
+*.user
+*.suo
+.vs/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+build_err.txt
+*.obj
+*.ilk
+*.exp
+**/Timeline_autogen/
+
+## Packaging staging (generated into Installer tree)
+/Pack/bin/
+/Installer/Timeline/*.exe
+/Installer/Timeline/*.dll
+/Installer/Timeline/*.ico
+/Installer/Timeline/HLSL/
+/Installer/Timeline/platforms/
+/Installer/Timeline/styles/
+/Installer/Timeline/imageformats/
+/Installer/Timeline/iconengines/
+/Installer/Timeline/bearer/
+/Installer/Timeline/translations/
+/Installer/Timeline/audio/
+/Installer/Timeline/Resource/
+/Installer/Timeline/Other/
+/Installer/NSIS/
+/Timeline_Setup_*.exe
+
+# Keep /3rdparty/ tracked (large binaries via Git LFS)
