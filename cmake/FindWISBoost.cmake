@@ -21,16 +21,14 @@ endif()
 IF(DEFINED THIRDPARTY_ROOT AND EXISTS "${THIRDPARTY_ROOT}/boost/include")
 	SET(BOOST_HOME "${THIRDPARTY_ROOT}/boost" CACHE PATH "BOOST_HOME dependency path" FORCE)
 	SET(BOOST_INCLUDEDIR "${BOOST_HOME}/include" CACHE PATH "BOOST_INCLUDEDIR dependency path" FORCE)
-	# VS 多配置：同时加入 debug/release；FIND_PACKAGE 用当前 CMAKE_BUILD_TYPE 对应目录
+	# 仅链入当前配置对应目录：debug/release 下同名 libboost_*-mt-x64-*.lib，
+	# 若同时 LINK_DIRECTORIES 且 debug 在前，Release 会误链 Debug CRT 的 Boost。
 	IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
 		SET(BOOST_LIBRARYDIR "${BOOST_HOME}/lib/debug" CACHE PATH "BOOST_LIBRARYDIR dependency path" FORCE)
 	ELSE()
 		SET(BOOST_LIBRARYDIR "${BOOST_HOME}/lib/release" CACHE PATH "BOOST_LIBRARYDIR dependency path" FORCE)
 	ENDIF()
-	LINK_DIRECTORIES(
-		"${BOOST_HOME}/lib/debug"
-		"${BOOST_HOME}/lib/release"
-	)
+	LINK_DIRECTORIES("${BOOST_LIBRARYDIR}")
 	# 清掉可能残留的外部路径结果，避免 FindBoost 继续用 Mapping
 	UNSET(Boost_INCLUDE_DIR CACHE)
 	UNSET(Boost_LIBRARY_DIRS)

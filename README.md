@@ -8,6 +8,11 @@ Qt5 / C++17 时间线编辑软件。单体可执行文件 `Timeline.exe`（Libs 
 
 设计文档：[doc/](doc/README.md)
 
+## 下载
+
+- Windows 安装包：[Timeline_Setup_V1.0.3.exe](https://github.com/wc-xiong/Timeline/releases/download/v1.0.3/Timeline_Setup_V1.0.3.exe)（[Releases](https://github.com/wc-xiong/Timeline/releases)）
+- 从源码构建见下文「构建」；打包说明见 [Installer/README.md](Installer/README.md)
+
 ## 功能
 
 - 四窗格 UI：素材库 | 预览 | 属性 | 时间线
@@ -94,6 +99,11 @@ Qt5 / C++17 timeline editor. Ships as a single `Timeline.exe` (library sources c
 ![Timeline UI](doc/images/ui-overview.png)
 
 Design docs: [doc/](doc/README.md)
+
+## Download
+
+- Windows installer: [Timeline_Setup_V1.0.3.exe](https://github.com/wc-xiong/Timeline/releases/download/v1.0.3/Timeline_Setup_V1.0.3.exe) ([Releases](https://github.com/wc-xiong/Timeline/releases))
+- Build from source: see Build below; packaging notes: [Installer/README.md](Installer/README.md)
 
 ## Features
 
