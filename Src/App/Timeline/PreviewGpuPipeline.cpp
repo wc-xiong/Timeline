@@ -44,7 +44,15 @@ namespace PreviewGpuDetail
 		qint64 lastPtsMs = -1;
 		qint64 seekTargetMs = -1; // Seek 目标，Pump/Prime 用
 		bool bPlaying = false;
+		/** 已从解码器取出、但 pts 超过当前时钟的一帧。时钟追上后再上传，避免暂停 Seek 画出目标右侧。 */
+		AVFrame* pending = nullptr;
 	};
+
+	void ReleasePendingFrame(SGpuSlot& slot)
+	{
+		if (slot.pending)
+			av_frame_free(&slot.pending);
+	}
 
 	void CloseGpuSlot(SGpuSlot& slot)
 	{
@@ -70,6 +78,8 @@ namespace PreviewGpuDetail
 		slot.rgbaW = slot.rgbaH = 0;
 		slot.width = slot.height = 0;
 		slot.lastPtsMs = -1;
+		slot.seekTargetMs = -1;
+		ReleasePendingFrame(slot);
 		slot.bPlaying = false;
 		slot.path.clear();
 		slot.clipId = QUuid();
@@ -246,38 +256,57 @@ namespace PreviewGpuDetail
 		const int maxPull = bSeeking ? 64 : 8;
 		for (int i = 0; i < maxPull; ++i)
 		{
-			AVFrame* f = slot.decoder->GetVideoFrame();
+			AVFrame* f = nullptr;
+			if (slot.pending)
+			{
+				f = slot.pending;
+				slot.pending = nullptr;
+			}
+			else
+			{
+				f = slot.decoder->GetVideoFrame();
+			}
 			if (!f)
 				break;
-			if (bSeeking)
+			// 关键帧/过早帧：丢弃，继续解到接近目标（否则暂停 Seek 会停在错误画面）
+			if (bSeeking && f->pts + kSeekSlackMs < seekTarget)
 			{
-				// 关键帧/过早帧：丢弃，继续解到接近目标（否则暂停 Seek 会停在错误画面）
-				if (f->pts + kSeekSlackMs < seekTarget)
-				{
-					av_frame_free(&f);
-					continue;
-				}
-				if (pFrame)
-					av_frame_free(&pFrame);
-				pFrame = f;
-				// 已到达或越过目标，可结束 Seek
-				if (f->pts >= seekTarget - kSeekSlackMs)
-					break;
+				av_frame_free(&f);
 				continue;
+			}
+			// 超过时钟：留到时钟追上再画。暂停时时钟不动，所以不会播出目标右侧。
+			if (f->pts > clockMs)
+			{
+				ReleasePendingFrame(slot);
+				slot.pending = f;
+				break;
 			}
 			if (pFrame)
 				av_frame_free(&pFrame);
 			pFrame = f;
-			if (f->pts > clockMs && slot.lastPtsMs >= 0)
-				break;
+		}
+		// 解码器会丢掉目标前的帧，空白处第一次 Seek 的首帧常落在时钟右侧一帧内。
+		// 尚无不超过时钟的帧时，把这帧当作命中帧上传；播放中已有画面则仍等时钟追上。
+		if (!pFrame && slot.pending)
+		{
+			const bool bNoPictureYet = slot.lastPtsMs < 0;
+			if ((bSeeking || bNoPictureYet) && slot.pending->pts <= clockMs + kSeekSlackMs)
+			{
+				pFrame = slot.pending;
+				slot.pending = nullptr;
+			}
 		}
 		if (!pFrame)
-			return false;
-
-		// Seek 中若仍明显早于目标，先不上屏、不 Finish，等后续帧
-		if (bSeeking && pFrame->pts + kSeekSlackMs < seekTarget)
 		{
-			av_frame_free(&pFrame);
+			// Prime 已上传、本轮只剩下更晚的帧：把已有纹理交回，避免窗口 PresentBlack
+			if (slot.lastPtsMs >= 0 && slot.rgbaSrv)
+			{
+				if (outSrv) *outSrv = slot.rgbaSrv.Get();
+				if (outTex) *outTex = slot.rgbaTex.Get();
+				outW = slot.rgbaW;
+				outH = slot.rgbaH;
+				outPtsMs = slot.lastPtsMs;
+			}
 			return false;
 		}
 
@@ -399,6 +428,7 @@ using PreviewGpuDetail::CloseGpuSlot;
 using PreviewGpuDetail::OpenGpuSlot;
 using PreviewGpuDetail::PumpGpuSlot;
 using PreviewGpuDetail::FindSlot;
+using PreviewGpuDetail::ReleasePendingFrame;
 
 struct CPreviewGpuPipeline::Impl
 {
@@ -515,6 +545,7 @@ bool CPreviewGpuPipeline::SeekMs(qint64 ms)
 	m_pImpl->gpuSlots.front().decoder->Seek(ms < 0 ? 0 : ms, true);
 	m_pImpl->gpuSlots.front().lastPtsMs = -1;
 	m_pImpl->gpuSlots.front().seekTargetMs = ms < 0 ? 0 : ms;
+	ReleasePendingFrame(m_pImpl->gpuSlots.front());
 	return true;
 }
 
@@ -604,6 +635,7 @@ bool CPreviewGpuPipeline::SyncLayers(const std::vector<SPreviewGpuLayerDesc>& la
 				next.back().decoder->Seek(d.seekMs < 0 ? 0 : d.seekMs, true);
 				next.back().lastPtsMs = -1;
 				next.back().seekTargetMs = d.seekMs < 0 ? 0 : d.seekMs;
+				ReleasePendingFrame(next.back());
 			}
 		}
 		else
@@ -617,6 +649,7 @@ bool CPreviewGpuPipeline::SyncLayers(const std::vector<SPreviewGpuLayerDesc>& la
 				s.decoder->Seek(d.seekMs, true);
 				s.lastPtsMs = -1;
 				s.seekTargetMs = d.seekMs;
+				ReleasePendingFrame(s);
 			}
 			next.push_back(std::move(s));
 		}
@@ -642,6 +675,7 @@ bool CPreviewGpuPipeline::SeekLayer(const QUuid& clipId, qint64 ms)
 	s->decoder->Seek(ms < 0 ? 0 : ms, true);
 	s->lastPtsMs = -1;
 	s->seekTargetMs = ms < 0 ? 0 : ms;
+	ReleasePendingFrame(*s);
 	return true;
 }
 
@@ -692,12 +726,12 @@ bool CPreviewGpuPipeline::PrimeSeekFrames(int maxAttempts, int sleepMs)
 				ID3D11ShaderResourceView* srv = nullptr;
 				int fw = 0, fh = 0;
 				qint64 pts = -1;
-				// Seek 中用目标时刻作 clock；否则推进 lastPts
+				// 时钟固定在 Seek 目标，不往 lastPts+1 垫下一帧
 				qint64 clock = 0;
-				if (s.decoder->IsSeeking() && s.seekTargetMs >= 0)
+				if (s.seekTargetMs >= 0)
 					clock = s.seekTargetMs;
 				else if (s.lastPtsMs >= 0)
-					clock = s.lastPtsMs + 1;
+					clock = s.lastPtsMs;
 				if (PumpGpuSlot(s, clock, ctx, &srv, nullptr, fw, fh, pts))
 					bAnyNew = true;
 				if (s.decoder->IsSeeking())

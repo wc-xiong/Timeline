@@ -190,33 +190,29 @@ CMediaPreviewWnd::CMediaPreviewWnd(QWidget* parent)
 		if (m_retryEpoch != m_seekEpoch)
 			return;
 		--m_primeRetryLeft;
+		// 软解不要每轮清 lastPresentedPts，否则会把目标右侧的新帧也收进来
 		bool bGot = false;
 		if (m_bUseHwPipeline)
 			bGot = PullLayersAtClock();
 		else
-		{
-			const qint64 prev = m_lastPresentedPts;
-			m_lastPresentedPts = -1;
 			bGot = PullFrameAtClock(m_previewClockMs);
-			if (!bGot)
-				m_lastPresentedPts = prev;
-		}
 		if (m_retryEpoch != m_seekEpoch)
 			return;
 
 		constexpr qint64 kNearMs = 80;
-		const bool bNearTarget = bGot && m_lastPresentedPts >= 0
+		const bool bNearTarget = m_lastPresentedPts >= 0
 			&& std::llabs(m_lastPresentedPts - m_previewClockMs) <= kNearMs;
-
-		if (bGot && bNearTarget)
-			PresentLastFrame();
 
 		const bool bStillSeeking = m_bUseHwPipeline
 			? CPreviewGpuPipeline::Instance().IsAnySeeking()
 			: (m_pSession && m_pSession->IsSeeking());
-		// 必须当前目标帧就绪才停；上一 Seek 的帧即使 bGot 也继续等
+		// 命中冻结时钟：Present 一次并停止。未命中不画新帧。
 		if (bNearTarget && !bStillSeeking)
+		{
+			if (bGot)
+				PresentLastFrame();
 			return;
+		}
 		if (m_primeRetryLeft <= 0)
 		{
 			if (m_retryEpoch != m_seekEpoch)
@@ -225,7 +221,7 @@ CMediaPreviewWnd::CMediaPreviewWnd(QWidget* parent)
 				CPreviewGpuPipeline::Instance().FinishSeekAll();
 			else if (m_pSession && m_pSession->IsSeeking())
 				m_pSession->FinishSeek();
-			if (bGot)
+			if (bNearTarget)
 				PresentLastFrame();
 			return;
 		}
